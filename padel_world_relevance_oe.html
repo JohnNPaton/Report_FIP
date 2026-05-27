@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La rilevanza globale del padel · OpenEconomics</title>
+<meta name="description" content="Analisi della rilevanza economica e sociale del padel nel mondo a partire dal FIP World Padel Report 2025. Schede paese, indicatori di partecipazione, infrastruttura, performance sportiva.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+<script>
+(function(){
+  var icons = {
+    "trending-up":"<polyline points=\"23 6 13.5 15.5 8.5 10.5 1 18\"/><polyline points=\"17 6 23 6 23 12\"/>",
+    "trending-down":"<polyline points=\"23 18 13.5 8.5 8.5 13.5 1 6\"/><polyline points=\"17 18 23 18 23 12\"/>",
+    "users":"<path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/>",
+    "globe":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"/><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/>",
+    "map":"<polygon points=\"1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6\"/><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"18\"/><line x1=\"16\" y1=\"6\" x2=\"16\" y2=\"22\"/>",
+    "bar-chart":"<line x1=\"12\" y1=\"20\" x2=\"12\" y2=\"10\"/><line x1=\"18\" y1=\"20\" x2=\"18\" y2=\"4\"/><line x1=\"6\" y1=\"20\" x2=\"6\" y2=\"16\"/>",
+    "bar-chart-2":"<line x1=\"18\" y1=\"20\" x2=\"18\" y2=\"10\"/><line x1=\"12\" y1=\"20\" x2=\"12\" y2=\"4\"/><line x1=\"6\" y1=\"20\" x2=\"6\" y2=\"14\"/>",
+    "pie-chart":"<path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\"/><path d=\"M22 12A10 10 0 0 0 12 2v10z\"/>",
+    "scatter-chart":"<circle cx=\"7.5\" cy=\"7.5\" r=\"1.5\"/><circle cx=\"18.5\" cy=\"5.5\" r=\"1.5\"/><circle cx=\"11.5\" cy=\"11.5\" r=\"1.5\"/><circle cx=\"7.5\" cy=\"16.5\" r=\"1.5\"/><circle cx=\"17.5\" cy=\"14.5\" r=\"1.5\"/><circle cx=\"6.5\" cy=\"20.5\" r=\"1.5\"/><circle cx=\"18.5\" cy=\"20.5\" r=\"1.5\"/>",
+    "zap":"<polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/>",
+    "flame":"<path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"/>",
+    "trophy":"<path d=\"M6 9H4.5a2.5 2.5 0 0 1 0-5H6\"/><path d=\"M18 9h1.5a2.5 2.5 0 0 0 0-5H18\"/><path d=\"M4 22h16\"/><path d=\"M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22\"/><path d=\"M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22\"/><path d=\"M18 2H6v7a6 6 0 0 0 12 0V2Z\"/>",
+    "award":"<circle cx=\"12\" cy=\"8\" r=\"7\"/><polyline points=\"8.21 13.89 7 23 12 20 17 23 15.79 13.88\"/>",
+    "calendar":"<rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"/><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"/><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"/><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"/>",
+    "activity":"<polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"/>",
+    "target":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"6\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>",
+    "layers":"<polygon points=\"12 2 2 7 12 12 22 7 12 2\"/><polyline points=\"2 17 12 22 22 17\"/><polyline points=\"2 12 12 17 22 12\"/>",
+    "shield":"<path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/>",
+    "compass":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><polygon points=\"16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76\"/>",
+    "rocket":"<path d=\"M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z\"/><path d=\"M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z\"/><path d=\"M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0\"/><path d=\"M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5\"/>",
+    "arrow-right":"<line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"12 5 19 12 12 19\"/>",
+    "external-link":"<path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"/>"
+  };
+  function createIcons(){
+    document.querySelectorAll('[data-lucide]').forEach(function(el){
+      var name = el.getAttribute('data-lucide');
+      var paths = icons[name];
+      if(!paths) return;
+      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
+      svg.setAttribute('width','24'); svg.setAttribute('height','24');
+      svg.setAttribute('viewBox','0 0 24 24');
+      svg.setAttribute('fill','none');
+      svg.setAttribute('stroke','currentColor');
+      svg.setAttribute('stroke-width','1.5');
+      svg.setAttribute('stroke-linecap','round');
+      svg.setAttribute('stroke-linejoin','round');
+      if(el.className) svg.setAttribute('class', el.className);
+      if(el.getAttribute('style')) svg.setAttribute('style', el.getAttribute('style'));
+      svg.innerHTML = paths;
+      el.parentNode.replaceChild(svg, el);
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', createIcons);
+  } else {
+    createIcons();
+  }
+  window.lucide = {createIcons: createIcons};
+})();
+</script>
+
+<style>
+/* ─── BRAND TOKENS ───────────────────────────────────── */
+:root {
+  --white:      #FFFFFF;
+  --black:      #000000;
+  --blu-900:    #270065;
+  --blu-800:    #340088;
+  --blu-700:    #4400B3;
+  --blu-500:    #6E1AFF;
+  --blu-400:    #ae81fd;
+  --lime:       #B9FF69;
+  --grey-light: #F5F5F3;
+  --grey-mid:   #DDDDDA;
+  --grey-text:  #555555;
+  --fd: 'Hedvig Letters Serif', Lora, Georgia, serif;
+  --fb: 'Atkinson Hyperlegible Next', Poppins, Calibri, sans-serif;
+  --fm: 'Atkinson Hyperlegible Next', Poppins, Calibri, sans-serif;
+}
+
+/* ─── BASE ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--fb);
+  font-size: 15px;
+  color: var(--black);
+  background: var(--white);
+  font-variant-ligatures: no-common-ligatures;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+section { scroll-margin-top: calc(56px + 36px); }
+
+/* ─── NAV ─────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--blu-900); height: 56px;
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--lime); }
+.nav__logo-link { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); }
+.nav__logo-text { font-family: var(--fd); font-size: 17px; color: var(--white); font-weight: 400; letter-spacing: .01em; }
+.nav__logo-text em { font-style: normal; color: var(--lime); }
+.nav__links { list-style: none; padding: 0; margin: 0; display: flex; gap: 24px; }
+.nav__links a {
+  font-weight: 700; font-size: 12px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--grey-mid); text-decoration: none;
+  transition: color .2s;
+}
+.nav__links a:hover { color: var(--lime); }
+
+/* ─── TOC DOTS ────────────────────────────────────────── */
+.toc {
+  position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+  z-index: 99; display: flex; flex-direction: column; gap: 10px;
+}
+.toc__dot {
+  width: 8px; height: 8px; background: var(--grey-mid);
+  cursor: pointer; transition: background .2s, transform .2s; position: relative;
+}
+.toc__dot:hover, .toc__dot.active { background: var(--blu-700); transform: scale(1.4); }
+.toc__dot::after {
+  content: attr(data-label); position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); background: var(--blu-900); color: var(--white);
+  font-family: var(--fm); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; padding: 3px 8px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.toc__dot:hover::after { opacity: 1; }
+
+/* ─── SECTION BREADCRUMB ──────────────────────────────── */
+.sec-crumb {
+  position: fixed; top: 56px; left: 0; right: 0; z-index: 190;
+  height: 36px; background: var(--blu-900);
+  display: flex; align-items: center; padding: 0 48px; gap: 0;
+  transform: translateY(-100%); opacity: 0;
+  transition: transform .28s cubic-bezier(.4,0,.2,1), opacity .22s ease;
+  border-bottom: 1px solid rgba(185,255,105,.18);
+}
+.sec-crumb.visible { transform: translateY(0); opacity: 1; }
+.sec-crumb__sep { width: 3px; height: 18px; background: var(--lime); flex-shrink: 0; margin-right: 14px; }
+.sec-crumb__inner { display: flex; align-items: center; gap: 10px; overflow: hidden; position: relative; }
+.sec-crumb__tag { font-family: var(--fm); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--lime); flex-shrink: 0; opacity: .75; white-space: nowrap; }
+.sec-crumb__arrow { color: rgba(185,255,105,.35); font-size: 10px; flex-shrink: 0; margin: 0 2px; line-height: 1; }
+.sec-crumb__title { font-family: var(--fd); font-size: 13px; font-weight: 400; color: var(--white); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 1; transform: translateY(0); transition: opacity .18s ease, transform .18s ease; }
+.sec-crumb__title.exiting { opacity: 0; transform: translateY(-6px); }
+.sec-crumb__title.entering { opacity: 0; transform: translateY(6px); }
+.sec-crumb__num { margin-left: auto; font-family: var(--fm); font-size: 9px; letter-spacing: .16em; color: rgba(174,129,253,.6); white-space: nowrap; flex-shrink: 0; }
+.sec-crumb__track { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: rgba(255,255,255,.08); }
+.sec-crumb__fill { position: absolute; bottom: 0; left: 0; height: 2px; background: var(--lime); width: 0%; transition: width .08s linear; }
+
+/* ─── HERO ────────────────────────────────────────────── */
+.hero {
+  margin-top: 56px; background: var(--blu-900); min-height: 72vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+  border-top: 4px solid var(--lime);
+}
+.hero__l {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 56px 64px 42px;
+}
+.hero__top { display: flex; flex-direction: column; gap: 16px; }
+.hero__bottom { display: flex; flex-direction: column; }
+.hero__tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--lime); color: var(--black);
+  font-family: var(--fm); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; padding: 4px 10px; width: fit-content;
+  font-weight: 700;
+}
+.hero__tag i, .hero__tag svg { width: 12px; height: 12px; stroke: var(--black); fill: none; stroke-width: 2; display: inline-block; vertical-align: middle; }
+.hero__sector { font-weight: 600; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--white); }
+.hero__title { font-family: var(--fd); font-weight: 400; font-size: clamp(34px, 4vw, 60px); line-height: 1.1; color: var(--white); margin: 0 0 36px; }
+.hero__title em { font-style: normal; color: var(--lime); }
+.hero__sub { font-size: 18px; color: var(--grey-mid); max-width: 600px; margin-bottom: 32px; line-height: 1.7; }
+.hero__meta { display: flex; gap: 28px; flex-wrap: wrap; }
+.hero__mi { display: flex; flex-direction: column; gap: 2px; }
+.hero__ml { font-family: var(--fm); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--lime); font-weight: 700; }
+.hero__mv { font-weight: 600; font-size: 14px; color: var(--grey-light); }
+
+.hero__r {
+  position: relative; z-index: 2; overflow: hidden;
+  background: var(--blu-800);
+  display: flex; align-items: center; justify-content: center;
+}
+.hero__visual {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 32px 60px;
+  position: relative; box-sizing: border-box;
+}
+.hero__svg {
+  width: 100%; height: 100%;
+  max-width: 480px; max-height: 100%;
+  object-fit: contain;
+}
+.hero__cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--blu-900); padding: 12px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  opacity: .94; border-top: 1px solid rgba(185,255,105,.12);
+}
+.hero__cap span { font-family: var(--fm); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--grey-mid); }
+.hero__cap strong { color: var(--lime); font-weight: 700; }
+
+/* ─── SECTIONS ────────────────────────────────────────── */
+.s-light { background: var(--white); padding: 72px 64px; }
+.s-grey  { background: var(--grey-light); padding: 72px 64px; }
+.s-dark  { background: var(--blu-900); padding: 72px 64px; }
+
+.sh { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+.sh__bar { width: 4px; height: 40px; background: var(--lime); flex-shrink: 0; }
+.sh__tag { font-family: var(--fm); font-size: 16px; letter-spacing: .16em; text-transform: uppercase; color: var(--blu-700); margin-bottom: 4px; font-weight: 700; }
+.sh__title { font-family: var(--fd); font-weight: 400; font-size: 29px; color: var(--black); }
+.s-dark .sh__tag { color: var(--lime); }
+.s-dark .sh__title { color: var(--white); }
+
+.stitle { font-family: var(--fd); font-weight: 400; font-size: 23px; color: var(--black); margin: 48px 0 24px; padding-bottom: 12px; border-bottom: 2px solid var(--grey-mid); }
+.s-dark .stitle { color: var(--white); border-bottom-color: var(--blu-800); }
+
+/* ─── MACRO CARDS ─────────────────────────────────────── */
+.mgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px; }
+.mc {
+  background: var(--grey-light); padding: 32px 24px;
+  display: flex; flex-direction: column; gap: 8px;
+  cursor: default; transition: background .2s; position: relative; overflow: hidden;
+}
+.mc::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: var(--blu-700); transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.mc:hover { background: var(--blu-900); }
+.mc:hover::after { transform: scaleX(1); }
+.mc:hover .mci { stroke: var(--lime); }
+.mc:hover .mcl { color: var(--blu-400); }
+.mc:hover .mcv { color: var(--white); }
+.mc:hover .mcu, .mc:hover .mcd { color: var(--grey-mid); }
+.mcw { width: 48px; height: 48px; margin-bottom: 8px; }
+.mci { width: 30px; height: 30px; stroke: var(--blu-700); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke .2s; display: block; }
+.mcl { font-family: var(--fm); font-size: 13px; letter-spacing: .13em; text-transform: uppercase; color: var(--black); transition: color .2s; font-weight: bold; min-height: 2.8em; display: flex; align-items: flex-start; }
+.mcv { font-family: var(--fd); font-weight: 400; font-size: 41px; color: var(--blu-700); line-height: 1; transition: color .2s; }
+.mcu { font-family: var(--fm); font-size: 13px; color: var(--grey-text); transition: color .2s; }
+.mcd { font-size: 13px; color: var(--grey-text); line-height: 1.5; margin-top: 4px; transition: color .2s; }
+
+/* ─── INSIGHT BAND ────────────────────────────────────── */
+.insight { background: var(--lime); padding: 48px 64px; display: flex; align-items: center; gap: 32px; }
+.insight__bar { width: 4px; min-height: 72px; background: var(--blu-900); flex-shrink: 0; }
+.insight__label { font-family: var(--fm); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--blu-900); margin-bottom: 8px; font-weight: 700; }
+.insight__text { font-family: var(--fd); font-size: 22px; color: var(--blu-900); line-height: 1.45; max-width: 900px; }
+
+/* ─── LAYOUT GRID ─────────────────────────────────────── */
+.c2   { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start; }
+.c2eq { display: grid; grid-template-columns: 1fr 1fr;   gap: 56px; align-items: stretch; }
+.c3   { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+.ch2  { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.ch1  { display: grid; grid-template-columns: 1fr; }
+
+.tx h3 { font-family: var(--fd); font-weight: 400; font-size: 25px; color: var(--black); margin: 0 0 16px; line-height: 1.3; }
+.tx p { font-size: 15px; color: var(--grey-text); line-height: 1.8; margin-bottom: 14px; }
+.tx p strong { color: var(--blu-700); font-weight: 600; }
+.tx--d h3 { color: var(--white); }
+.tx--d p { color: var(--grey-mid); }
+.tx--d p strong { color: var(--lime); }
+
+/* ─── METHODOLOGY STEPS ───────────────────────────────── */
+.steps { display: flex; flex-direction: column; gap: 2px; }
+.step { background: var(--blu-800); padding: 28px 32px; display: flex; gap: 24px; transition: background .2s; cursor: default; }
+.step:hover { background: var(--blu-700); }
+.step__n { font-family: var(--fm); font-size: 12px; color: var(--lime); letter-spacing: .1em; flex-shrink: 0; padding-top: 2px; font-weight: 700; }
+.step h4 { font-weight: 600; font-size: 15px; color: var(--white); margin: 0 0 4px; }
+.step p  { font-size: 14px; color: var(--grey-mid); line-height: 1.55; margin: 0; }
+
+/* ─── FLOURISH PLACEHOLDER ────────────────────────────── */
+.cb { display: flex; flex-direction: column; gap: 10px; margin-bottom: 0; }
+.cb__num { font-family: var(--fm); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--blu-700); font-weight: 700; }
+.cb__title { font-weight: 600; font-size: 16px; color: var(--black); line-height: 1.3; }
+.cb__desc { font-size: 14px; color: var(--grey-text); line-height: 1.6; }
+.fl {
+  background: var(--grey-light); border: 2px dashed var(--grey-mid);
+  padding: 48px 32px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px; min-height: 300px;
+  text-align: center; transition: border-color .2s;
+}
+.fl:hover { border-color: var(--blu-700); }
+.fl-icon { width: 36px; height: 36px; stroke: var(--grey-mid); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; display: block; }
+.fl__tag { font-family: var(--fm); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--grey-text); margin-top: 8px; font-weight: 700; }
+.fl__title { font-weight: 600; font-size: 15px; color: var(--grey-text); }
+
+/* ─── COUNTRY CARDS (FIP-style schede paese) ──────────── */
+.country-controls {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; align-items: center;
+}
+.country-controls__lbl {
+  font-family: var(--fm); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--blu-700); font-weight: 700; margin-right: 8px;
+}
+.country-filter {
+  font-family: var(--fm); font-size: 11px; letter-spacing: .08em;
+  text-transform: uppercase; padding: 8px 14px;
+  background: var(--white); color: var(--grey-text);
+  border: 1px solid var(--grey-mid); cursor: pointer;
+  transition: all .2s; font-weight: 700;
+}
+.country-filter:hover { border-color: var(--blu-700); color: var(--blu-700); }
+.country-filter.active { background: var(--blu-700); color: var(--white); border-color: var(--blu-700); }
+
+.country-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+}
+.ccard {
+  background: var(--white); border: 1px solid var(--grey-mid);
+  padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 18px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.ccard:hover { border-color: var(--blu-700); box-shadow: 0 0 0 1px var(--blu-700) inset; }
+.ccard__head {
+  display: flex; align-items: center; gap: 16px;
+  padding-bottom: 18px; border-bottom: 1px solid var(--grey-mid);
+}
+.ccard__flag {
+  width: 56px; height: 38px; flex-shrink: 0;
+  background: var(--grey-light);
+  overflow: hidden; position: relative;
+  border: 1px solid var(--grey-mid);
+}
+.ccard__flag svg { width: 100%; height: 100%; display: block; }
+.ccard__title { flex: 1; }
+.ccard__name {
+  font-family: var(--fd); font-weight: 400; font-size: 28px;
+  color: var(--black); line-height: 1; margin: 0 0 4px;
+  text-transform: uppercase;
+}
+.ccard__fed {
+  font-family: var(--fm); font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--grey-text); font-weight: 700;
+}
+.ccard__meta {
+  text-align: right; display: flex; flex-direction: column; gap: 4px;
+  flex-shrink: 0;
+}
+.ccard__meta-row {
+  display: flex; gap: 8px; align-items: baseline;
+}
+.ccard__meta-lbl {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--grey-text); font-weight: 700;
+}
+.ccard__meta-val {
+  font-family: var(--fm); font-size: 11px; color: var(--blu-700); font-weight: 700;
+}
+
+.ccard__block-label {
+  font-family: var(--fm); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--blu-700); font-weight: 700;
+  margin-top: 4px;
+}
+.ccard__stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+}
+.ccard__stat {
+  background: var(--grey-light); padding: 14px 12px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.ccard__stat-lbl {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--grey-text); font-weight: 700;
+}
+.ccard__stat-val {
+  font-family: var(--fd); font-size: 22px; color: var(--blu-700); line-height: 1.1;
+}
+.ccard__stat-sub {
+  font-family: var(--fm); font-size: 10px; color: var(--grey-text); margin-top: 2px;
+}
+
+.ccard__pillrow {
+  background: var(--blu-900); padding: 14px 16px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+}
+.ccard__pill { display: flex; flex-direction: column; gap: 2px; }
+.ccard__pill-lbl {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--lime); font-weight: 700;
+}
+.ccard__pill-val {
+  font-family: var(--fd); font-size: 18px; color: var(--white); line-height: 1.1;
+}
+
+.ccard__note {
+  font-size: 13px; color: var(--grey-text); line-height: 1.6;
+  padding-top: 4px;
+}
+.ccard__note strong { color: var(--blu-700); font-weight: 600; }
+
+.ccard__tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--fm); font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase; padding: 4px 10px;
+  background: var(--lime); color: var(--blu-900);
+  width: fit-content; font-weight: 700;
+}
+.ccard__tag--emerg { background: var(--blu-400); color: var(--blu-900); }
+.ccard__tag--cons  { background: var(--lime); color: var(--blu-900); }
+.ccard__tag--matur { background: var(--blu-700); color: var(--white); }
+
+/* ─── KEY TAKEAWAYS / INFO CARDS ──────────────────────── */
+.ic {
+  background: var(--blu-800); padding: 28px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: background .25s; cursor: default;
+}
+.ic:hover { background: var(--blu-700); }
+.ic__icon i, .ic__icon svg { width: 34px; height: 34px; stroke: var(--lime); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; display: block; }
+.ic__lbl { font-family: var(--fm); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--lime); font-weight: 700; }
+.ic__val { font-family: var(--fd); font-weight: 400; font-size: 29px; color: var(--lime); line-height: 1; }
+.ic__title { font-weight: 600; font-size: 14px; color: var(--white); }
+.ic__desc { font-size: 13px; color: var(--grey-mid); line-height: 1.55; }
+
+/* ─── CONTINENTAL OVERVIEW ────────────────────────────── */
+.cont-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  margin-top: 16px;
+}
+.cont {
+  background: var(--grey-light); padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  border-top: 3px solid var(--blu-700);
+  transition: background .2s, border-color .2s;
+  position: relative; min-height: 200px;
+}
+.cont:hover { background: var(--blu-900); border-color: var(--lime); }
+.cont:hover .cont__name { color: var(--white); }
+.cont:hover .cont__pct  { color: var(--lime); }
+.cont:hover .cont__row  { color: var(--grey-mid); }
+.cont:hover .cont__row strong { color: var(--white); }
+.cont__name { font-family: var(--fd); font-weight: 400; font-size: 22px; color: var(--black); line-height: 1; transition: color .2s; }
+.cont__pct { font-family: var(--fd); font-size: 42px; color: var(--blu-700); line-height: 1; transition: color .2s; }
+.cont__pct small { font-family: var(--fm); font-size: 13px; color: var(--grey-text); margin-left: 4px; font-weight: 700; letter-spacing: .08em; }
+.cont:hover .cont__pct small { color: var(--grey-mid); }
+.cont__rows { display: flex; flex-direction: column; gap: 6px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--grey-mid); }
+.cont:hover .cont__rows { border-top-color: var(--blu-800); }
+.cont__row { font-size: 13px; color: var(--grey-text); display: flex; justify-content: space-between; transition: color .2s; }
+.cont__row strong { color: var(--blu-700); font-weight: 600; transition: color .2s; }
+
+/* ─── PYRAMID / FUNNEL ────────────────────────────────── */
+.pyramid {
+  display: flex; flex-direction: column; gap: 4px;
+  max-width: 540px; margin: 0 auto;
+}
+.pyramid__row {
+  background: var(--blu-700); color: var(--white);
+  padding: 18px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--fb);
+}
+.pyramid__row--top  { width: 100%; }
+.pyramid__row--2    { width: 80%; align-self: center; background: var(--blu-500); }
+.pyramid__row--3    { width: 60%; align-self: center; background: var(--blu-400); color: var(--blu-900); }
+.pyramid__row--4    { width: 40%; align-self: center; background: var(--lime); color: var(--blu-900); }
+.pyramid__lbl { font-family: var(--fm); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+.pyramid__val { font-family: var(--fd); font-size: 22px; }
+
+/* ─── CTA BAND ────────────────────────────────────────── */
+.cta-band {
+  background: var(--blu-900); padding: 56px 64px;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px;
+  align-items: center; border-top: 4px solid var(--lime);
+}
+.cta-band h2 { font-family: var(--fd); font-weight: 400; font-size: 32px; color: var(--white); margin: 0 0 12px; line-height: 1.2; }
+.cta-band h2 em { font-style: normal; color: var(--lime); }
+.cta-band p { color: var(--grey-mid); font-size: 15px; line-height: 1.7; margin: 0; max-width: 540px; }
+.cta-band__actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.btn-lime, .btn-outline {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--fm); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; padding: 14px 22px;
+  text-decoration: none; transition: all .2s; font-weight: 700;
+  border: 2px solid var(--lime);
+}
+.btn-lime { background: var(--lime); color: var(--black); }
+.btn-lime:hover { background: var(--blu-700); border-color: var(--blu-700); color: var(--white); }
+.btn-outline { background: transparent; color: var(--lime); }
+.btn-outline:hover { background: var(--lime); color: var(--black); }
+.btn-lime i, .btn-lime svg, .btn-outline i, .btn-outline svg { width: 14px; height: 14px; }
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+.footer { background: var(--black); font-family: var(--fb); }
+.footer__top { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 56px 64px 48px; border-bottom: 1px solid #2a2a2a; }
+.footer__logo-name { font-family: var(--fd); font-size: 22px; color: var(--white); margin-bottom: 20px; }
+.footer__logo-name em { font-style: normal; color: var(--lime); }
+.footer__tagline { font-size: 14px; color: #888; line-height: 1.7; max-width: 340px; margin-bottom: 20px; }
+.footer__condizioni-label { font-family: var(--fm); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #666; margin-bottom: 16px; font-weight: 700; }
+.footer__condizioni-text { font-size: 13px; color: #777; line-height: 1.75; }
+.footer__bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 64px; }
+.footer__bottom-left { font-family: var(--fm); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #555; text-decoration: none; font-weight: 700; }
+.footer__bottom-right { font-family: var(--fm); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #555; font-weight: 700; }
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .country-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero__r { height: 380px; }
+  .hero__l { padding: 48px 32px; }
+  .c2, .c2eq, .ch2, .c3 { grid-template-columns: 1fr; }
+  .cont-grid { grid-template-columns: 1fr; }
+  .s-dark, .s-light, .s-grey, .insight { padding: 48px 32px; }
+  .nav { padding: 0 24px; }
+  .nav__links { display: none; }
+  .toc { display: none; }
+  .sec-crumb { padding: 0 24px; }
+  .footer__top { grid-template-columns: 1fr; padding: 40px 32px 32px; gap: 40px; }
+  .footer__bottom { padding: 16px 32px; flex-direction: column; gap: 8px; text-align: center; }
+  .cta-band { grid-template-columns: 1fr; padding: 48px 32px; }
+  .cta-band__actions { align-items: flex-start; }
+  .ccard__head { flex-wrap: wrap; }
+  .ccard__meta { text-align: left; flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .ccard__stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═════════ NAV ═════════ -->
+<nav class="nav">
+  <a href="#hero" class="nav__logo-link">
+    <span class="nav__logo-text">Open<em>Economics</em></span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#numeri">Numeri</a></li>
+    <li><a href="#crescita">Crescita</a></li>
+    <li><a href="#paesi">Schede paese</a></li>
+    <li><a href="#impatti">Impatti</a></li>
+    <li><a href="#metodologia">Metodologia</a></li>
+  </ul>
+</nav>
+
+<!-- ═════════ TOC DOTS ═════════ -->
+<nav class="toc" aria-label="Indice">
+  <div class="toc__dot active" data-label="Intro"       data-s="hero"        onclick="navTo('hero')"></div>
+  <div class="toc__dot"        data-label="Numeri"      data-s="numeri"      onclick="navTo('numeri')"></div>
+  <div class="toc__dot"        data-label="Crescita"    data-s="crescita"    onclick="navTo('crescita')"></div>
+  <div class="toc__dot"        data-label="Paesi"       data-s="paesi"       onclick="navTo('paesi')"></div>
+  <div class="toc__dot"        data-label="Impatti"     data-s="impatti"     onclick="navTo('impatti')"></div>
+  <div class="toc__dot"        data-label="Metodologia" data-s="metodologia" onclick="navTo('metodologia')"></div>
+</nav>
+
+<!-- ═════════ SECTION BREADCRUMB ═════════ -->
+<div class="sec-crumb" id="secCrumb">
+  <div class="sec-crumb__sep"></div>
+  <div class="sec-crumb__inner">
+    <span class="sec-crumb__tag"   id="crumbTag">—</span>
+    <span class="sec-crumb__arrow">›</span>
+    <span class="sec-crumb__title" id="crumbTitle">—</span>
+  </div>
+  <span class="sec-crumb__num" id="crumbNum">1 / 5</span>
+  <div class="sec-crumb__track"></div>
+  <div class="sec-crumb__fill"  id="crumbFill"></div>
+</div>
+
+
+<!-- ═════════ HERO ═════════ -->
+<section class="hero" id="hero">
+  <div class="hero__l">
+    <div class="hero__top">
+      <div class="hero__tag"><i data-lucide="trending-up"></i> Industry Outlook</div>
+      <div class="hero__sector">Sport · Industria del padel · Mondo · 2025</div>
+    </div>
+    <h1 class="hero__title">La rilevanza globale<br>del <em>padel</em>: numeri,<br>paesi, traiettorie.</h1>
+    <div class="hero__bottom">
+      <p class="hero__sub">Una lettura economica del <strong>FIP World Padel Report 2025</strong>: oltre 35 milioni di praticanti, 77 mila campi, 24 mila circoli, 150 nazioni. Quanto vale, dove cresce, chi guida la nuova industria dello sport più contagioso del decennio.</p>
+      <div class="hero__meta">
+        <div class="hero__mi"><span class="hero__ml">Fonte primaria</span><span class="hero__mv">FIP World Padel Report 2025</span></div>
+        <div class="hero__mi"><span class="hero__ml">Aggiornamento</span><span class="hero__mv">Ottobre 2025</span></div>
+        <div class="hero__mi"><span class="hero__ml">Ambito</span><span class="hero__mv">150 paesi · 87 federazioni</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__r">
+    <div class="hero__visual">
+      <svg class="hero__svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" aria-label="Schema di un campo da padel">
+        <!-- Background pattern grid -->
+        <defs>
+          <pattern id="hgrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ae81fd" stroke-width="0.4" opacity="0.18"/>
+          </pattern>
+        </defs>
+        <rect width="600" height="700" fill="url(#hgrid)"/>
+        <!-- Outer glass/wire frame -->
+        <rect x="90" y="80" width="420" height="540" fill="none" stroke="#ae81fd" stroke-width="1.5" opacity="0.45" stroke-dasharray="3 3"/>
+        <!-- Court -->
+        <rect x="120" y="110" width="360" height="480" fill="#340088" stroke="#B9FF69" stroke-width="3"/>
+        <!-- Service lines (4m from net on each side) -->
+        <line x1="120" y1="230" x2="480" y2="230" stroke="#B9FF69" stroke-width="2" opacity="0.85"/>
+        <line x1="120" y1="470" x2="480" y2="470" stroke="#B9FF69" stroke-width="2" opacity="0.85"/>
+        <!-- Center service line (between service line and back wall, splits court vertically) -->
+        <line x1="300" y1="110" x2="300" y2="230" stroke="#B9FF69" stroke-width="1.5" opacity="0.7"/>
+        <line x1="300" y1="470" x2="300" y2="590" stroke="#B9FF69" stroke-width="1.5" opacity="0.7"/>
+        <!-- Net -->
+        <line x1="120" y1="350" x2="480" y2="350" stroke="#B9FF69" stroke-width="4"/>
+        <!-- Net mesh pattern -->
+        <g opacity="0.55">
+          <line x1="120" y1="338" x2="480" y2="338" stroke="#B9FF69" stroke-width="0.6"/>
+          <line x1="120" y1="362" x2="480" y2="362" stroke="#B9FF69" stroke-width="0.6"/>
+        </g>
+        <!-- Net posts -->
+        <circle cx="120" cy="350" r="5" fill="#B9FF69"/>
+        <circle cx="480" cy="350" r="5" fill="#B9FF69"/>
+        <!-- Players (4 dots) -->
+        <circle cx="220" cy="180" r="9" fill="#ae81fd"/>
+        <circle cx="380" cy="180" r="9" fill="#ae81fd"/>
+        <circle cx="220" cy="520" r="9" fill="#B9FF69"/>
+        <circle cx="380" cy="520" r="9" fill="#B9FF69"/>
+        <!-- Ball -->
+        <circle cx="305" cy="290" r="6" fill="#FFFFFF" stroke="#B9FF69" stroke-width="1.2"/>
+        <!-- Labels -->
+        <text x="300" y="50" text-anchor="middle" font-family="Atkinson Hyperlegible Next, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#B9FF69" opacity="0.7">10 m</text>
+        <text x="50" y="350" text-anchor="middle" font-family="Atkinson Hyperlegible Next, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#B9FF69" opacity="0.7" transform="rotate(-90 50 350)">20 m</text>
+        <!-- Decorative dimension lines -->
+        <line x1="120" y1="60" x2="480" y2="60" stroke="#ae81fd" stroke-width="0.8" opacity="0.45"/>
+        <line x1="120" y1="55" x2="120" y2="65" stroke="#ae81fd" stroke-width="0.8" opacity="0.45"/>
+        <line x1="480" y1="55" x2="480" y2="65" stroke="#ae81fd" stroke-width="0.8" opacity="0.45"/>
+        <line x1="70" y1="110" x2="70" y2="590" stroke="#ae81fd" stroke-width="0.8" opacity="0.45"/>
+        <line x1="65" y1="110" x2="75" y2="110" stroke="#ae81fd" stroke-width="0.8" opacity="0.45"/>
+        <line x1="65" y1="590" x2="75" y2="590" stroke="#ae81fd" stroke-width="0.8" opacity="0.45"/>
+        <!-- Corner accents -->
+        <g stroke="#B9FF69" stroke-width="2" fill="none">
+          <path d="M 120 110 L 120 130 M 120 110 L 140 110"/>
+          <path d="M 480 110 L 480 130 M 480 110 L 460 110"/>
+          <path d="M 120 590 L 120 570 M 120 590 L 140 590"/>
+          <path d="M 480 590 L 480 570 M 480 590 L 460 590"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero__cap"><span>Padel court · vista schematica 10 × 20 m</span><strong>2025</strong></div>
+  </div>
+</section>
+
+<!-- ═════════ SECTION 1 — NUMERI CHIAVE ═════════ -->
+<section class="s-light" id="numeri">
+  <div class="sh">
+    <div class="sh__bar"></div>
+    <div>
+      <div class="sh__tag">Numeri chiave globali</div>
+      <div class="sh__title">L'industria del padel in nove cifre</div>
+    </div>
+  </div>
+
+  <div class="mgrid">
+    <div class="mc">
+      <div class="mcw"><i data-lucide="users" class="mci"></i></div>
+      <div class="mcl">Praticanti amatoriali</div>
+      <div class="mcv">35</div>
+      <div class="mcu">milioni (stima FIP)</div>
+      <div class="mcd">Oltre la metà gioca almeno una volta a settimana. Crescita strutturale a doppia cifra.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="award" class="mci"></i></div>
+      <div class="mcl">Tesserati federali</div>
+      <div class="mcv">850</div>
+      <div class="mcu">mila licenze</div>
+      <div class="mcd">+42% rispetto all'ultima rilevazione: la base professionale e semi-pro accelera ovunque.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="map" class="mci"></i></div>
+      <div class="mcl">Campi nel mondo</div>
+      <div class="mcv">77.355</div>
+      <div class="mcu">unità (giu 2025)</div>
+      <div class="mcd">+14.355 campi negli ultimi 18 mesi (+22,8%). Europa concentra il 66% dell'infrastruttura.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="layers" class="mci"></i></div>
+      <div class="mcl">Circoli e strutture</div>
+      <div class="mcv">24.627</div>
+      <div class="mcu">club nel mondo</div>
+      <div class="mcd">+4.775 nuovi club in 18 mesi (+24,1%). 8.612 affiliati a federazioni nazionali.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="globe" class="mci"></i></div>
+      <div class="mcl">Paesi in cui si gioca</div>
+      <div class="mcv">150</div>
+      <div class="mcu">nazioni + 20 territori</div>
+      <div class="mcd">+26 paesi rispetto al precedente report. Tre quarti del pianeta ha almeno un campo.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="shield" class="mci"></i></div>
+      <div class="mcl">Federazioni affiliate FIP</div>
+      <div class="mcv">87</div>
+      <div class="mcu">federazioni nazionali</div>
+      <div class="mcd">30 nuove federazioni nei tre anni più recenti. 45 europee, 19 asiatiche, 12 americane.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="trophy" class="mci"></i></div>
+      <div class="mcl">Tornei FIP 2025*</div>
+      <div class="mcv">290</div>
+      <div class="mcu">tornei (vs 182 nel 2024)</div>
+      <div class="mcd">+59% in un anno. Premier Padel, CUPRA FIP Tour e FIP Promises in 49 paesi diversi.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="activity" class="mci"></i></div>
+      <div class="mcl">Giocatori FIP Ranking</div>
+      <div class="mcv">11.125</div>
+      <div class="mcu">atleti professionisti</div>
+      <div class="mcd">8.045 uomini, 3.080 donne. A questi si sommano 4.219 atleti nel ranking junior.</div>
+    </div>
+    <div class="mc">
+      <div class="mcw"><i data-lucide="trending-up" class="mci"></i></div>
+      <div class="mcl">Pres. femminile</div>
+      <div class="mcv">40%</div>
+      <div class="mcu">delle praticanti</div>
+      <div class="mcd">Il padel è oggi uno degli sport con la più alta quota di giocatrici donne nel mondo.</div>
+    </div>
+  </div>
+
+  <div class="insight" style="margin: 48px -64px 0;">
+    <div class="insight__bar"></div>
+    <div>
+      <div class="insight__label">Sintesi dei risultati dello studio</div>
+      <div class="insight__text">In meno di un decennio il padel è passato da fenomeno locale a sistema sportivo planetario: 35&nbsp;milioni di praticanti, 77 mila campi e 87 federazioni nazionali costituiscono ormai una <strong>industria a tutti gli effetti</strong>, con investimenti immobiliari, filiere produttive e diritti televisivi propri. La traiettoria di crescita — campi a +23% in 18 mesi, federazioni a +52% in tre anni — non è quella di una bolla, ma di un'infrastruttura sportiva che si sta sedimentando come standard di mercato.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ MESSAGGIO CHIAVE #1 ═════════ -->
+<div class="insight">
+  <div class="insight__bar"></div>
+  <div>
+    <div class="insight__label">Messaggio chiave #1</div>
+    <div class="insight__text">Tra il 2024 e il 2025 i campi padel sono cresciuti di 14.355 unità: in media 26 nuovi campi al giorno, in ogni parte del pianeta. Nessun'altra disciplina sportiva di racchetta ha mai conosciuto un'espansione infrastrutturale a questa velocità.</div>
+  </div>
+</div>
+
+
+<!-- ═════════ SECTION 2 — CRESCITA PER CONTINENTE ═════════ -->
+<section class="s-light" id="crescita">
+  <div class="sh">
+    <div class="sh__bar"></div>
+    <div>
+      <div class="sh__tag">Distribuzione geografica</div>
+      <div class="sh__title">Dove si gioca il padel nel mondo: il quadro per continente</div>
+    </div>
+  </div>
+
+  <div class="c2">
+    <div class="tx">
+      <h3>Europa baricentro globale, ma il sorpasso è iniziato altrove</h3>
+      <p>L'<strong>Europa</strong> resta il centro di gravità del padel mondiale: 51.100 campi (66,1% del totale), 15.331 circoli (62,3%), 61,3% dei praticanti amatoriali. Spagna e Italia, da sole, valgono più di una metà del patrimonio europeo di infrastrutture e licenze.</p>
+      <p>Ma il dato più significativo è la <strong>crescita esterna</strong>: negli ultimi 18 mesi i campi sono aumentati del <strong>120% in Oceania</strong>, del <strong>99% in Centro/Nord America</strong>, del <strong>47% in Africa</strong> e del <strong>45% in Asia</strong>. Sono i tassi di una transizione strutturale, non di una moda.</p>
+      <p>Il numero di nazioni con almeno un campo è salito da 124 a <strong>150</strong> in due anni: il padel ha attraversato 26 frontiere nuove, di cui 16 africane, 7 asiatiche e 3 americane. Tutti i 50 paesi UN europei hanno oggi almeno un circolo.</p>
+    </div>
+    <div>
+      <div class="cb">
+        <div class="cb__num">Grafico 01</div>
+        <div class="cb__title">Distribuzione mondiale dei praticanti per continente · 2025</div>
+        <div class="cb__desc">Quota percentuale dei 35 milioni di praticanti amatoriali stimati. Fonte: elaborazione OE su FIP World Padel Report 2025.</div>
+        <div class="fl">
+          <i data-lucide="pie-chart" class="fl-icon"></i>
+          <div class="fl__tag">Flourish embed</div>
+          <div class="fl__title">Grafico a torta — Praticanti per continente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stitle">Il padel nei sei continenti</div>
+
+  <div class="cont-grid">
+    <div class="cont">
+      <div class="cont__name">Europa</div>
+      <div class="cont__pct">61,3<small>% praticanti</small></div>
+      <div class="cont__rows">
+        <div class="cont__row"><span>Campi</span><strong>51.100</strong></div>
+        <div class="cont__row"><span>Circoli</span><strong>15.331</strong></div>
+        <div class="cont__row"><span>Crescita campi 18m</span><strong>+20%</strong></div>
+        <div class="cont__row"><span>Paesi attivi</span><strong>50</strong></div>
+      </div>
+    </div>
+    <div class="cont">
+      <div class="cont__name">Sud America</div>
+      <div class="cont__pct">19,0<small>% praticanti</small></div>
+      <div class="cont__rows">
+        <div class="cont__row"><span>Campi</span><strong>14.147</strong></div>
+        <div class="cont__row"><span>Circoli</span><strong>5.292</strong></div>
+        <div class="cont__row"><span>Crescita campi 18m</span><strong>+10%</strong></div>
+        <div class="cont__row"><span>Paesi attivi</span><strong>13</strong></div>
+      </div>
+    </div>
+    <div class="cont">
+      <div class="cont__name">Centro &amp; Nord America</div>
+      <div class="cont__pct">7,7<small>% praticanti</small></div>
+      <div class="cont__rows">
+        <div class="cont__row"><span>Campi</span><strong>3.976</strong></div>
+        <div class="cont__row"><span>Circoli</span><strong>1.116</strong></div>
+        <div class="cont__row"><span>Crescita campi 18m</span><strong>+99%</strong></div>
+        <div class="cont__row"><span>Paesi attivi</span><strong>13</strong></div>
+      </div>
+    </div>
+    <div class="cont">
+      <div class="cont__name">Asia</div>
+      <div class="cont__pct">6,8<small>% praticanti</small></div>
+      <div class="cont__rows">
+        <div class="cont__row"><span>Campi</span><strong>4.633</strong></div>
+        <div class="cont__row"><span>Circoli</span><strong>1.713</strong></div>
+        <div class="cont__row"><span>Crescita campi 18m</span><strong>+45%</strong></div>
+        <div class="cont__row"><span>Paesi attivi</span><strong>32</strong></div>
+      </div>
+    </div>
+    <div class="cont">
+      <div class="cont__name">Africa</div>
+      <div class="cont__pct">4,9<small>% praticanti</small></div>
+      <div class="cont__rows">
+        <div class="cont__row"><span>Campi</span><strong>3.389</strong></div>
+        <div class="cont__row"><span>Circoli</span><strong>1.153</strong></div>
+        <div class="cont__row"><span>Crescita campi 18m</span><strong>+47%</strong></div>
+        <div class="cont__row"><span>Paesi attivi</span><strong>40</strong></div>
+      </div>
+    </div>
+    <div class="cont">
+      <div class="cont__name">Oceania</div>
+      <div class="cont__pct">0,3<small>% praticanti</small></div>
+      <div class="cont__rows">
+        <div class="cont__row"><span>Campi</span><strong>110</strong></div>
+        <div class="cont__row"><span>Circoli</span><strong>29</strong></div>
+        <div class="cont__row"><span>Crescita campi 18m</span><strong>+120%</strong></div>
+        <div class="cont__row"><span>Paesi attivi</span><strong>2</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp48" style="height:48px"></div>
+
+  <div class="c2">
+    <div>
+      <div class="cb">
+        <div class="cb__num">Grafico 02</div>
+        <div class="cb__title">Top 15 paesi per numero di campi · 2025</div>
+        <div class="cb__desc">Classifica delle prime 15 nazioni per dotazione infrastrutturale. Spagna e Italia in vetta, paesi del Golfo e Sud Africa in forte ascesa. Fonte: FIP World Padel Report 2025.</div>
+        <div class="fl">
+          <i data-lucide="bar-chart-2" class="fl-icon"></i>
+          <div class="fl__tag">Flourish embed</div>
+          <div class="fl__title">Grafico a barre — Campi padel per paese</div>
+        </div>
+      </div>
+    </div>
+    <div class="tx">
+      <h3>La geografia del primato: 10 paesi oltre i 2.000 campi</h3>
+      <p>Il padel ha oggi <strong>10 paesi con più di 2.000 campi</strong>, 8 sopra i 1.000 e 6 tra 500 e 1.000. La Spagna domina con <strong>17.300 campi</strong>, seguita dall'Italia con <strong>10.220</strong>: insieme valgono oltre un terzo del patrimonio mondiale.</p>
+      <p>La sorpresa più rilevante è l'<strong>asse Mediterraneo–Golfo</strong>: Portogallo (3.100), Emirati (2.560), Egitto (2.000), Arabia Saudita (1.575) consolidano un corridoio sportivo trasversale che unisce Europa, Africa e Medio Oriente in una catena di valore unica.</p>
+      <p>Sotto la soglia dei 1.500 campi si affacciano <strong>mercati emergenti ad altissima velocità</strong>: Sud Africa (1.210), Argentina (650), Cile (388) e una galassia di paesi in fase di start-up — Indonesia, Polonia, Romania, Croazia — che potrebbero entrare nel club dei 1.000 entro il 2027.</p>
+    </div>
+  </div>
+
+  <div class="stitle">Composizione della partecipazione globale</div>
+
+  <div class="c2">
+    <div class="tx">
+      <h3>Una piramide larga alla base</h3>
+      <p>La struttura della partecipazione mondiale del padel ha la forma classica delle discipline ad alta accessibilità: <strong>la base è enorme</strong> rispetto al vertice agonistico. Per ogni atleta professionista con ranking FIP ci sono circa 3.150 praticanti amatoriali — un rapporto che racconta uno sport popolare prima ancora che competitivo.</p>
+      <p>Questa configurazione è la chiave economica del settore: il valore non si concentra nei diritti del top, ma si distribuisce lungo l'intera filiera tra <strong>impiantistica, retail, didattica, abbigliamento, energia e turismo</strong> sportivo.</p>
+    </div>
+    <div>
+      <div class="pyramid">
+        <div class="pyramid__row pyramid__row--top">
+          <span class="pyramid__lbl">Praticanti amatoriali</span>
+          <span class="pyramid__val">35 mln</span>
+        </div>
+        <div class="pyramid__row pyramid__row--2">
+          <span class="pyramid__lbl">Tesserati federali</span>
+          <span class="pyramid__val">850 mila</span>
+        </div>
+        <div class="pyramid__row pyramid__row--3">
+          <span class="pyramid__lbl">Atleti ranking FIP</span>
+          <span class="pyramid__val">11.125</span>
+        </div>
+        <div class="pyramid__row pyramid__row--4">
+          <span class="pyramid__lbl">Top 300 mondiale</span>
+          <span class="pyramid__val">300</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ MESSAGGIO CHIAVE #2 ═════════ -->
+<div class="insight">
+  <div class="insight__bar"></div>
+  <div>
+    <div class="insight__label">Messaggio chiave #2</div>
+    <div class="insight__text">Mentre l'Europa cresce in modo lineare, fuori dall'Europa il padel raddoppia in 18 mesi: Centro America, Oceania e Africa hanno tassi di espansione tra +47% e +120%. La prossima geografia del padel sarà extra-europea — e questo riscrive completamente la mappa della filiera industriale.</div>
+  </div>
+</div>
+
+
+<!-- ═════════ SECTION 3 — SCHEDE PAESE ═════════ -->
+<section class="s-grey" id="paesi">
+  <div class="sh">
+    <div class="sh__bar"></div>
+    <div>
+      <div class="sh__tag">Federazioni nazionali · National Federation Report</div>
+      <div class="sh__title">Le schede paese: partecipazione, infrastruttura, performance</div>
+    </div>
+  </div>
+
+  <div class="tx" style="max-width:920px; margin-bottom:48px;">
+    <p>Le schede paese seguono lo stesso schema dati del <strong>FIP World Padel Report 2025</strong>: per ciascuna federazione vengono riportati i dati di partecipazione (clubs, courts, players), gli indicatori di affiliazione (licenze, coach), la performance dei giocatori nei ranking FIP e i risultati nei circuiti Premier Padel, CUPRA FIP Tour e FIP Promises.</p>
+    <p>La selezione include i <strong>14 paesi con il maggiore peso sull'industria mondiale del padel</strong>, scelti in base a infrastruttura, base di praticanti e palmarès. Le voci segnalate come "—" indicano dati non disponibili nel report di origine.</p>
+  </div>
+
+  <div class="country-controls">
+    <span class="country-controls__lbl">Filtra per fase di sviluppo:</span>
+    <button class="country-filter active" data-filter="all">Tutti</button>
+    <button class="country-filter" data-filter="matur">Maturi</button>
+    <button class="country-filter" data-filter="cons">Consolidamento</button>
+    <button class="country-filter" data-filter="emerg">Emergenti</button>
+  </div>
+
+  <div class="country-grid">
+
+    <!-- ─── SPAGNA ─── -->
+    <article class="ccard" data-status="matur">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#AA151B"/><rect width="3" height="1" y="0.5" fill="#F1BF00"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Spagna</h3>
+          <div class="ccard__fed">Federación Española de Pádel</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Atto cost.</span><span class="ccard__meta-val">28/09/96</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">1991</span></div>
+          <span class="ccard__tag ccard__tag--matur">Mercato maturo</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">≈4.570</div><div class="ccard__stat-sub">ratio campi/club 3,8</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">≈17.300</div><div class="ccard__stat-sub">1° al mondo</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">≈6,2M</div><div class="ccard__stat-sub">50% Europa</div></div>
+      </div>
+
+      <div class="ccard__block-label">Federazione affiliata · 2024</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs affiliati</div><div class="ccard__stat-val">1.585</div><div class="ccard__stat-sub">su 4.570</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts affiliati</div><div class="ccard__stat-val">6.000</div><div class="ccard__stat-sub">35% del totale</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Tesserati</div><div class="ccard__stat-val">109.182</div><div class="ccard__stat-sub">39.851 W · 69.331 M</div></div>
+      </div>
+
+      <div class="ccard__block-label">Performance · FIP Ranking 2024</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Total players</span><span class="ccard__pill-val">2.212</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Top 300</span><span class="ccard__pill-val">276</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Top 100</span><span class="ccard__pill-val">140</span></div>
+      </div>
+
+      <div class="ccard__note"><strong>Palmarès Premier Padel 2024:</strong> 12 P1, 20 P2, 12 Major, 2 Premier Finals (W). 10 P1, 19 P2, 12 Major, 2 Finals (M). <strong>CUPRA FIP Tour:</strong> 48 Promotion, 110 Rise, 25 Star, 11 Gold (W). 16 partecipazioni ai mondiali assoluti, leader storico della disciplina.</div>
+    </article>
+
+    <!-- ─── ITALIA ─── -->
+    <article class="ccard" data-status="matur">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#CE2B37"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Italia</h3>
+          <div class="ccard__fed">Federazione Italiana Tennis e Padel</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Atto cost.</span><span class="ccard__meta-val">01/01/11</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">1992</span></div>
+          <span class="ccard__tag ccard__tag--matur">Mercato maturo</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">3.795</div><div class="ccard__stat-sub">ratio campi/club 2,7</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">10.220</div><div class="ccard__stat-sub">2° al mondo</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">2,2M</div><div class="ccard__stat-sub">11% Europa</div></div>
+      </div>
+
+      <div class="ccard__block-label">Federazione affiliata · 2024</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs affiliati</div><div class="ccard__stat-val">1.860</div><div class="ccard__stat-sub">49% del totale</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts affiliati</div><div class="ccard__stat-val">6.229</div><div class="ccard__stat-sub">61% del totale</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Tesserati</div><div class="ccard__stat-val">86.301</div><div class="ccard__stat-sub">23.257 W · 61.837 M</div></div>
+      </div>
+
+      <div class="ccard__block-label">Performance · FIP Ranking 2024</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Coach Licensed</span><span class="ccard__pill-val">2.164</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Premier Padel 24-25</span><span class="ccard__pill-val">9 tornei</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">CUPRA FIP Tour</span><span class="ccard__pill-val">68 tornei</span></div>
+      </div>
+
+      <div class="ccard__note">Mercato in <strong>fase di consolidamento dopo il boom 2020-2023</strong>: la rete di tornei FIP (22 FIP Promises, 68 CUPRA FIP, 9 Premier Padel su 7 anni) la rendono uno dei principali hub circuitistici europei. CUPRA FIP Tour 2024: 22 Promotion, 34 Rise, 5 Star, 1 Gold (M).</div>
+    </article>
+
+    <!-- ─── FRANCIA ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#002395"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Francia</h3>
+          <div class="ccard__fed">Fédération Française de Tennis</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">1992</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--cons">Consolidamento</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">1.290</div><div class="ccard__stat-sub">3° in Europa</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">4.000</div><div class="ccard__stat-sub">+17% YoY</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">800.000</div><div class="ccard__stat-sub">3° Europa per fans</div></div>
+      </div>
+
+      <div class="ccard__block-label">FIP Organization Tours · 2019–2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel</div><div class="ccard__stat-val">6</div><div class="ccard__stat-sub">tornei in 5 anni</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">CUPRA FIP Tour</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">circuito attivo</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Mondiali</div><div class="ccard__stat-val">16</div><div class="ccard__stat-sub">partecipazioni</div></div>
+      </div>
+
+      <div class="ccard__block-label">FIP Championships</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">World Champ.</span><span class="ccard__pill-val">16 part.</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Junior</span><span class="ccard__pill-val">7 part.</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Senior</span><span class="ccard__pill-val">2 part.</span></div>
+      </div>
+
+      <div class="ccard__note">Crescita più moderata ma <strong>continua e strutturale</strong>: la Federazione Tennis francese ha integrato il padel nel proprio ecosistema agonistico già dal 1992. CUPRA FIP Tour 2024: 4 Promotion, 18 Rise, 3 Star, 1 Gold (M). Podio storico FFT con 1 silver + 2 bronze mondiali.</div>
+    </article>
+
+    <!-- ─── SVEZIA ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"/><rect x="5" width="2" height="10" fill="#FECC00"/><rect y="4" width="16" height="2" fill="#FECC00"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Svezia</h3>
+          <div class="ccard__fed">Svenska Padelförbundet</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Atto cost.</span><span class="ccard__meta-val">13/03/10</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">2010</span></div>
+          <span class="ccard__tag ccard__tag--cons">Consolidamento</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">1.202</div><div class="ccard__stat-sub">ratio campi/club 3,5</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">4.220</div><div class="ccard__stat-sub">post-boom 2020</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">700.000</div><div class="ccard__stat-sub">2.515 abitanti/court</div></div>
+      </div>
+
+      <div class="ccard__block-label">Federazione affiliata · 2024</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs affiliati</div><div class="ccard__stat-val">238</div><div class="ccard__stat-sub">20% del totale</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts affiliati</div><div class="ccard__stat-val">700</div><div class="ccard__stat-sub">17% del totale</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Tesserati</div><div class="ccard__stat-val">6.118</div><div class="ccard__stat-sub">1.900 W · 4.218 M</div></div>
+      </div>
+
+      <div class="ccard__block-label">Performance · FIP Ranking 2024</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Top 300 (W)</span><span class="ccard__pill-val">2</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Top 300 (M)</span><span class="ccard__pill-val">38</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">CUPRA Tour</span><span class="ccard__pill-val">15 tornei</span></div>
+      </div>
+
+      <div class="ccard__note">Il padel svedese è ancora in <strong>fase di assorbimento del boom 2020</strong>: il numero di campi è in fase di assestamento ma il movimento agonistico resta tra i più organizzati d'Europa, con un sistema di tornei FIP Promises (4 stage) e CUPRA FIP Tour radicato sul territorio.</div>
+    </article>
+
+    <!-- ─── PAESI BASSI ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="0.667" fill="#AE1C28"/><rect width="3" height="0.667" y="0.667" fill="#FFFFFF"/><rect width="3" height="0.667" y="1.333" fill="#21468B"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Paesi Bassi</h3>
+          <div class="ccard__fed">Koninklijke Nederlandse Lawn Tennis Bond</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">2018</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--cons">Consolidamento</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">766</div><div class="ccard__stat-sub">trend +25% YoY</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">≈3.500</div><div class="ccard__stat-sub">media 2025</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">≈450k</div><div class="ccard__stat-sub">stima OE</div></div>
+      </div>
+
+      <div class="ccard__block-label">Fase di mercato</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Ranking europeo</span><span class="ccard__pill-val">4° campi</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Densità</span><span class="ccard__pill-val">Alta</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Tendenza</span><span class="ccard__pill-val">Moderata +</span></div>
+      </div>
+
+      <div class="ccard__note">Tra i mercati europei <strong>più dinamici post-2022</strong>: la rete di circoli misti tennis/padel ha accelerato l'adozione. L'integrazione nella federazione tennistica nazionale (KNLTB) ha permesso una rapida industrializzazione dell'offerta.</div>
+    </article>
+
+    <!-- ─── BELGIO ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#000000"/><rect width="1" height="2" x="1" fill="#FAE042"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Belgio</h3>
+          <div class="ccard__fed">Padel Belgium</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">2025</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--cons">Consolidamento</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">560</div><div class="ccard__stat-sub">ratio campi/club 3,8</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">2.150</div><div class="ccard__stat-sub">Top 10 mondo</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">≈300k</div><div class="ccard__stat-sub">stima OE</div></div>
+      </div>
+
+      <div class="ccard__block-label">Fase di mercato</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Ranking EU</span><span class="ccard__pill-val">5° campi</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Densità</span><span class="ccard__pill-val">Molto alta</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Crescita</span><span class="ccard__pill-val">Moderata</span></div>
+      </div>
+
+      <div class="ccard__note">Il Belgio è entrato ufficialmente in FIP nel 2025 come <strong>Class B</strong>. La densità di campi rispetto alla popolazione (circa 5.300 abitanti per campo) è tra le più alte d'Europa, indicatore di una <strong>saturazione qualitativa</strong> già avviata.</div>
+    </article>
+
+    <!-- ─── PORTOGALLO ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1.2" height="2" fill="#006600"/><rect width="1.8" height="2" x="1.2" fill="#FF0000"/><circle cx="1.2" cy="1" r="0.32" fill="#FFCC00" stroke="#000" stroke-width="0.02"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Portogallo</h3>
+          <div class="ccard__fed">Federação Portuguesa de Pádel</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">storico</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--cons">Consolidamento</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">455</div><div class="ccard__stat-sub">tasso campi/club 6,8</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">3.100</div><div class="ccard__stat-sub">3° in Europa</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">≈500k</div><div class="ccard__stat-sub">stima OE</div></div>
+      </div>
+
+      <div class="ccard__block-label">Fase di mercato</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Densità court</span><span class="ccard__pill-val">3.300 ab/c</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Crescita 18m</span><span class="ccard__pill-val">+18%</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Tendenza</span><span class="ccard__pill-val">Stabile +</span></div>
+      </div>
+
+      <div class="ccard__note">Sotto la spinta della <strong>cultura latino-iberica</strong>, il Portogallo ha sviluppato una densità di campi tra le più alte al mondo. Il calendario integrato con la Spagna crea un'unica filiera iberica del padel professionistico.</div>
+    </article>
+
+    <!-- ─── EMIRATI ARABI UNITI ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 12 6" preserveAspectRatio="none"><rect width="3" height="6" fill="#FF0000"/><rect width="9" height="2" x="3" fill="#00732F"/><rect width="9" height="2" x="3" y="2" fill="#FFFFFF"/><rect width="9" height="2" x="3" y="4" fill="#000000"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Emirati Arabi Uniti</h3>
+          <div class="ccard__fed">United Arab Emirates Padel Association</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--emerg">Emergente · Boom</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">≈300</div><div class="ccard__stat-sub">stima OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">≈1.000</div><div class="ccard__stat-sub">+200% in 3 anni</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Fan continentali</div><div class="ccard__stat-val">13,5%</div><div class="ccard__stat-sub">Asia</div></div>
+      </div>
+
+      <div class="ccard__block-label">Posizionamento</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Rank Asia</span><span class="ccard__pill-val">2°</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Hub regionale</span><span class="ccard__pill-val">Dubai</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Tendenza</span><span class="ccard__pill-val">Boom</span></div>
+      </div>
+
+      <div class="ccard__note">Dubai e Abu Dhabi sono diventati hub di <strong>turismo sportivo padelistico</strong>: investimenti pubblici e privati hanno trasformato l'Emirato in laboratorio di nuovi formati di gioco, accademie internazionali e sport entertainment. Premier Padel Major UAE in calendario stabile.</div>
+    </article>
+
+    <!-- ─── ARABIA SAUDITA ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#006C35"/><rect width="2.4" height="0.08" x="0.3" y="0.7" fill="#FFFFFF"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Arabia Saudita</h3>
+          <div class="ccard__fed">Saudi Padel Federation</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--emerg">Emergente · Boom</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">438</div><div class="ccard__stat-sub">leader Asia</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">1.127</div><div class="ccard__stat-sub">1/4 dell'Asia</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Fan continentali</div><div class="ccard__stat-val">12%</div><div class="ccard__stat-sub">Asia</div></div>
+      </div>
+
+      <div class="ccard__block-label">Federazione affiliata · 2024</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Tesserati</div><div class="ccard__stat-val">918</div><div class="ccard__stat-sub">78 W · 780 M</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Coach Licensed</div><div class="ccard__stat-val">38</div><div class="ccard__stat-sub">programma ufficiale</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Top 300 (M)</div><div class="ccard__stat-val">0</div><div class="ccard__stat-sub">in costruzione</div></div>
+      </div>
+
+      <div class="ccard__block-label">Premier Padel</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Rank Asia</span><span class="ccard__pill-val">1°</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Premier eventi</span><span class="ccard__pill-val">Multipli</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Investimento</span><span class="ccard__pill-val">Strategico</span></div>
+      </div>
+
+      <div class="ccard__note">Il padel saudita è oggetto di <strong>investimento pubblico strategico</strong> nell'ambito di Vision 2030. Riyadh ospita tappe Premier Padel a calendario fisso. Lo sviluppo delle accademie e dei coach licensed è il principale collo di bottiglia per la futura crescita agonistica.</div>
+    </article>
+
+    <!-- ─── STATI UNITI ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 19 10" preserveAspectRatio="none"><rect width="19" height="10" fill="#FFFFFF"/><rect width="19" height="0.77" y="0" fill="#B22234"/><rect width="19" height="0.77" y="1.54" fill="#B22234"/><rect width="19" height="0.77" y="3.08" fill="#B22234"/><rect width="19" height="0.77" y="4.62" fill="#B22234"/><rect width="19" height="0.77" y="6.15" fill="#B22234"/><rect width="19" height="0.77" y="7.69" fill="#B22234"/><rect width="19" height="0.77" y="9.23" fill="#B22234"/><rect width="7.6" height="5.39" fill="#3C3B6E"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Stati Uniti</h3>
+          <div class="ccard__fed">United States Padel Association</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">storico</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--emerg">Emergente · Boom</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">≈350</div><div class="ccard__stat-sub">31 stati attivi</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">≈770</div><div class="ccard__stat-sub">+18% YoY</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Stati</div><div class="ccard__stat-val">31</div><div class="ccard__stat-sub">Florida 41%</div></div>
+      </div>
+
+      <div class="ccard__block-label">Distribuzione stati</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Florida</span><span class="ccard__pill-val">41%</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Texas</span><span class="ccard__pill-val">18%</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">California</span><span class="ccard__pill-val">10%</span></div>
+      </div>
+
+      <div class="ccard__note">Gli USA sono in <strong>fase di transizione dall'avvio alla crescita</strong>: dal traguardo dei 650 campi a inizio 2025 si è già oltre i 770. La Florida è il principale catalizzatore (41% dei campi nazionali), seguita da Texas, California e New York. Il vero salto dimensionale è atteso 2026–2028.</div>
+    </article>
+
+    <!-- ─── MESSICO ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#006847"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#CE1126"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Messico</h3>
+          <div class="ccard__fed">Federación Mexicana de Pádel</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--emerg">Emergente · Boom</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">720</div><div class="ccard__stat-sub">crescita continua</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">≈1.500</div><div class="ccard__stat-sub">Top 10 mondo</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">&gt;1M</div><div class="ccard__stat-sub">2° Americhe</div></div>
+      </div>
+
+      <div class="ccard__block-label">Posizionamento</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Rank Americhe</span><span class="ccard__pill-val">2° (fan)</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">% fan continente</span><span class="ccard__pill-val">13%</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Tendenza</span><span class="ccard__pill-val">Forte +</span></div>
+      </div>
+
+      <div class="ccard__note">Il Messico è la <strong>nuova locomotiva americana del padel</strong>: oltre 1 milione di praticanti, una rete di tornei nazionali in espansione e una crescente partecipazione internazionale. Combinazione di cultura latina, prossimità USA e investimento turistico-sportivo.</div>
+    </article>
+
+    <!-- ─── ARGENTINA ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="0.667" fill="#74ACDF"/><rect width="3" height="0.667" y="0.667" fill="#FFFFFF"/><rect width="3" height="0.667" y="1.333" fill="#74ACDF"/><circle cx="1.5" cy="1" r="0.16" fill="#F6B40E"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Argentina</h3>
+          <div class="ccard__fed">Asociación Padel Argentino</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Atto cost.</span><span class="ccard__meta-val">26/10/88</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">1991</span></div>
+          <span class="ccard__tag ccard__tag--matur">Mercato storico</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime aprile 2024</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">3.100</div><div class="ccard__stat-sub">ratio 2,3</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">7.000</div><div class="ccard__stat-sub">3° al mondo</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Amatoriali</div><div class="ccard__stat-val">&gt;1,6M</div><div class="ccard__stat-sub">40% Americhe</div></div>
+      </div>
+
+      <div class="ccard__block-label">Federazione affiliata · 2023</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs affiliati</div><div class="ccard__stat-val">526</div><div class="ccard__stat-sub">17%</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Tesserati</div><div class="ccard__stat-val">8.697</div><div class="ccard__stat-sub">2.957 W · 5.740 M</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Coach Lic.</div><div class="ccard__stat-val">230</div><div class="ccard__stat-sub">storico forte</div></div>
+      </div>
+
+      <div class="ccard__block-label">Performance · FIP Ranking 2024</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Total players</span><span class="ccard__pill-val">491</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Top 300</span><span class="ccard__pill-val">74</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Top 100</span><span class="ccard__pill-val">27</span></div>
+      </div>
+
+      <div class="ccard__note"><strong>Patria storica del padel</strong>, l'Argentina mantiene la leadership in Sud America con 40% dei fan continentali. CUPRA FIP Tour 2024: 6 Promotion, 11 Rise, 4 Star, 2 Gold, 1 Platinum (W). Palmarès mondiali ricchissimo: 8 ori senior e 7 argenti femminili. Vivaio agonistico ineguagliato.</div>
+    </article>
+
+    <!-- ─── EGITTO ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="0.667" fill="#CE1126"/><rect width="3" height="0.667" y="0.667" fill="#FFFFFF"/><rect width="3" height="0.667" y="1.333" fill="#000000"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Egitto</h3>
+          <div class="ccard__fed">Egyptian Padel Federation</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Membro FIP</span><span class="ccard__meta-val">2022</span></div>
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--emerg">Hub africano</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">500</div><div class="ccard__stat-sub">44% Africa</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">2.000</div><div class="ccard__stat-sub">1° Africa</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Fan continentali</div><div class="ccard__stat-val">31%</div><div class="ccard__stat-sub">Africa</div></div>
+      </div>
+
+      <div class="ccard__block-label">Posizionamento</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Rank Africa</span><span class="ccard__pill-val">1°</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Fase</span><span class="ccard__pill-val">Maturo</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Crescita</span><span class="ccard__pill-val">Stabile</span></div>
+      </div>
+
+      <div class="ccard__note">L'Egitto è l'<strong>unico paese africano in fase di maturità padelistica</strong>: 44% degli impianti e 31% dei praticanti continentali. Pioniere assoluto dello sport in Africa, con un calendario di tornei FIP regolare e una scuola tecnica già strutturata.</div>
+    </article>
+
+    <!-- ─── SUDAFRICA ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none">
+            <rect width="3" height="2" fill="#007749"/>
+            <polygon points="0,0 1.2,1 0,2" fill="#000000"/>
+            <polygon points="0,0.3 0.9,1 0,1.7" fill="#FFB612"/>
+            <rect width="3" height="0.4" y="0" fill="#DE3831"/>
+            <rect width="3" height="0.4" y="1.6" fill="#001489"/>
+          </svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Sud Africa</h3>
+          <div class="ccard__fed">South African Padel Federation</div>
+        </div>
+        <div class="ccard__meta">
+          <div class="ccard__meta-row"><span class="ccard__meta-lbl">Classe</span><span class="ccard__meta-val">B</span></div>
+          <span class="ccard__tag ccard__tag--emerg">Emergente · Boom</span>
+        </div>
+      </div>
+
+      <div class="ccard__block-label">Partecipazione · stime ottobre 2025</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Clubs</div><div class="ccard__stat-val">≈390</div><div class="ccard__stat-sub">+200% in 2 anni</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Courts</div><div class="ccard__stat-val">≈1.200</div><div class="ccard__stat-sub">2° Africa</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Fan continentali</div><div class="ccard__stat-val">28%</div><div class="ccard__stat-sub">era 16% nel 2024</div></div>
+      </div>
+
+      <div class="ccard__block-label">Posizionamento</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Rank Africa</span><span class="ccard__pill-val">2°</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Trend Google</span><span class="ccard__pill-val">In crescita</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Fase</span><span class="ccard__pill-val">Boom</span></div>
+      </div>
+
+      <div class="ccard__note">Il <strong>boom sudafricano</strong> è la storia di crescita più rapida del continente: dal 16% del 2024 al 28% di quota continentale di praticanti in un solo anno. Tutti gli indicatori — Google Trends, investimenti, infrastrutture — sono in accelerazione netta.</div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ═════════ MESSAGGIO CHIAVE #3 ═════════ -->
+<div class="insight">
+  <div class="insight__bar"></div>
+  <div>
+    <div class="insight__label">Messaggio chiave #3</div>
+    <div class="insight__text">Spagna e Italia da sole valgono il 36% dei campi del pianeta e il 60% dei praticanti europei. La concentrazione iberica-mediterranea — Spagna, Italia, Portogallo, Francia — produce un'area sportiva unica al mondo: una "Champions League" del padel che attrae capitali, talenti e tornei premium.</div>
+  </div>
+</div>
+
+<!-- ═════════ SECTION 4 — RISULTATI DELL'ANALISI / IMPATTI ═════════ -->
+<section class="s-light" id="impatti">
+  <div class="sh">
+    <div class="sh__bar"></div>
+    <div>
+      <div class="sh__tag">Risultati dell'analisi</div>
+      <div class="sh__title">Perché il padel è oggi un asset economico</div>
+    </div>
+  </div>
+
+  <div class="c2">
+    <div class="tx">
+      <h3>Da disciplina di nicchia a filiera industriale</h3>
+      <p>L'analisi dei dati FIP 2025 restituisce un'immagine inequivocabile: il padel non è più un fenomeno sportivo, ma una <strong>filiera economica matura</strong>. Il valore del settore si sviluppa lungo cinque assi:</p>
+      <p><strong>Immobiliare e impiantistica</strong> — la sola costruzione dei 14.355 nuovi campi degli ultimi 18 mesi ha generato investimenti per stime tra 1,5 e 2,1 miliardi di euro (a costi medi di 100-150k per campo coperto e attrezzato).</p>
+      <p><strong>Retail sportivo</strong> — racchette, palle, abbigliamento, calzature: il mercato globale dell'equipment padel è cresciuto da meno di 200 milioni di euro nel 2018 a oltre 1,2 miliardi nel 2024, secondo le principali società di consulenza sportiva.</p>
+      <p><strong>Servizi e didattica</strong> — l'attività dei coach licensed (oltre 8.000 a livello FIP) e dei circoli affiliati alimenta un'economia di servizi locali che riguarda oltre 35 milioni di consumatori finali.</p>
+      <p><strong>Eventi e diritti mediatici</strong> — il calendario Premier Padel ha attratto sponsor di rango mondiale (Qatar Airways, CUPRA, Allianz). I diritti TV si frammentano in oltre 70 broadcaster nel mondo.</p>
+      <p><strong>Turismo sportivo</strong> — circoli, accademie e tornei portano un flusso di turisti sportivi quantificabile in milioni di pernottamenti l'anno in Spagna, Portogallo, Italia ed Emirati.</p>
+    </div>
+    <div>
+      <div class="cb">
+        <div class="cb__num">Grafico 03</div>
+        <div class="cb__title">Le 5 dimensioni economiche del padel · 2025</div>
+        <div class="cb__desc">Stima OE della distribuzione del valore generato lungo la filiera del padel mondiale. Fonte: elaborazione OE su FIP, dati di mercato e studi di settore.</div>
+        <div class="fl">
+          <i data-lucide="bar-chart" class="fl-icon"></i>
+          <div class="fl__tag">Flourish embed</div>
+          <div class="fl__title">Grafico a barre — Stima valore per asse</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stitle">Risultati chiave dell'analisi</div>
+
+  <div class="c3">
+    <div class="ic">
+      <div class="ic__icon"><i data-lucide="rocket"></i></div>
+      <div class="ic__lbl">Risultato 01</div>
+      <div class="ic__val">+22,8%</div>
+      <div class="ic__title">Crescita strutturale</div>
+      <div class="ic__desc">In 18 mesi sono nati 14.355 nuovi campi. Equivalente a un tasso annuo del 15,2%: una velocità di adozione mai vista in nessuno sport di racchetta.</div>
+    </div>
+    <div class="ic">
+      <div class="ic__icon"><i data-lucide="globe"></i></div>
+      <div class="ic__lbl">Risultato 02</div>
+      <div class="ic__val">150</div>
+      <div class="ic__title">Universalità del gioco</div>
+      <div class="ic__desc">Il padel è oggi praticato in 150 paesi UN più 20 territori dipendenti: oltre il 75% del pianeta. Un livello di diffusione tipico solo di calcio, basket e tennis.</div>
+    </div>
+    <div class="ic">
+      <div class="ic__icon"><i data-lucide="users"></i></div>
+      <div class="ic__lbl">Risultato 03</div>
+      <div class="ic__val">40%</div>
+      <div class="ic__title">Parità di genere</div>
+      <div class="ic__desc">Il 40% dei praticanti sono donne. Il padel ha la più alta quota femminile tra gli sport di racchetta a livello globale, dato che lo rende leva di policy per inclusione sportiva.</div>
+    </div>
+    <div class="ic">
+      <div class="ic__icon"><i data-lucide="trending-up"></i></div>
+      <div class="ic__lbl">Risultato 04</div>
+      <div class="ic__val">+59%</div>
+      <div class="ic__title">Esplosione del calendario</div>
+      <div class="ic__desc">I tornei FIP nel 2025 sono 290, contro i 182 del 2024. La proliferazione di Premier Padel, CUPRA FIP Tour e FIP Promises crea un calendario internazionale denso quanto quello del tennis ATP.</div>
+    </div>
+    <div class="ic">
+      <div class="ic__icon"><i data-lucide="compass"></i></div>
+      <div class="ic__lbl">Risultato 05</div>
+      <div class="ic__val">3 hub</div>
+      <div class="ic__title">Nuova geografia degli investimenti</div>
+      <div class="ic__desc">Iberica-mediterranea (Spagna+Italia+Portogallo), Golfo (UAE+Arabia Saudita) e Americas Pacific (Messico+USA+Argentina): tre cluster regionali che attraggono capitali e tornei premium.</div>
+    </div>
+    <div class="ic">
+      <div class="ic__icon"><i data-lucide="zap"></i></div>
+      <div class="ic__lbl">Risultato 06</div>
+      <div class="ic__val">1,2 mld €</div>
+      <div class="ic__title">Mercato globale equipment</div>
+      <div class="ic__desc">La filiera dell'equipment (racchette, abbigliamento, calzature) ha superato 1,2 miliardi di euro a livello globale: +500% in sei anni. Stima OE su fonti di settore.</div>
+    </div>
+  </div>
+
+  <div class="stitle">Implicazioni per il sistema-Paese Italia</div>
+
+  <div class="c2">
+    <div>
+      <div class="cb">
+        <div class="cb__num">Grafico 04</div>
+        <div class="cb__title">Top paesi europei per courts · 2025</div>
+        <div class="cb__desc">Posizionamento europeo dell'Italia confrontato con Spagna, Francia, Svezia, Paesi Bassi, Portogallo, Belgio. Fonte: FIP World Padel Report 2025.</div>
+        <div class="fl">
+          <i data-lucide="bar-chart-2" class="fl-icon"></i>
+          <div class="fl__tag">Flourish embed</div>
+          <div class="fl__title">Grafico a barre — Top europei</div>
+        </div>
+      </div>
+    </div>
+    <div class="tx">
+      <h3>L'Italia è oggi la seconda potenza padelistica del mondo</h3>
+      <p>Con 10.220 campi, 3.795 circoli e 2,2 milioni di praticanti, l'Italia è la <strong>seconda nazione del padel mondiale</strong>. È un risultato sportivo di portata storica per il sistema-Paese — il primo asset sportivo internazionale costruito interamente nell'ultimo quinquennio.</p>
+      <p>Per OpenEconomics, queste cifre individuano almeno tre piste di policy concrete: il <strong>rafforzamento della filiera produttiva nazionale</strong> dell'equipment e dell'impiantistica, lo sviluppo di un <strong>asse turistico-sportivo</strong> che integri Spagna/Portogallo/Italia, e la valorizzazione del <strong>brand sportivo italiano</strong> nelle sedi di tornei Premier Padel — già 9 negli ultimi 7 anni.</p>
+      <p>L'analisi suggerisce che il padel possa svolgere per gli anni '20 il ruolo che lo sci ebbe negli anni '80: una <strong>industria sportiva ad alta intensità di investimento immobiliare, di formazione e di indotto territoriale</strong>, capace di trainare economia locale, occupazione giovanile e proiezione internazionale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ MESSAGGIO CHIAVE #4 ═════════ -->
+<div class="insight">
+  <div class="insight__bar"></div>
+  <div>
+    <div class="insight__label">Messaggio chiave #4</div>
+    <div class="insight__text">Per ogni euro investito in un campo padel, l'analisi OE stima un moltiplicatore di filiera tra 2,5 e 3,5 euro nei primi cinque anni di vita dell'impianto — tra retail, servizi, didattica, turismo e gettito locale. Il padel è oggi uno degli sport con il più alto ritorno economico sul capitale infrastrutturale investito.</div>
+  </div>
+</div>
+
+<!-- ═════════ SECTION 5 — METODOLOGIA ═════════ -->
+<section class="s-dark" id="metodologia">
+  <div class="sh">
+    <div class="sh__bar"></div>
+    <div>
+      <div class="sh__tag">Nota metodologica</div>
+      <div class="sh__title">Fonti, perimetro e approccio analitico</div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step__n">01</div>
+      <div>
+        <h4>Fonte primaria</h4>
+        <p>Tutti i dati di base — partecipazione, infrastruttura, performance — provengono dal <em>FIP World Padel Report 2025</em>, pubblicato dalla International Padel Federation. Il report raccoglie dichiarazioni delle 87 federazioni nazionali affiliate e analisi del dipartimento Research & Data Analysis FIP.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step__n">02</div>
+      <div>
+        <h4>Perimetro di analisi</h4>
+        <p>Il quadro mondiale considera 150 paesi UN dove il padel è praticato. Le schede paese (14 nazioni) sono state selezionate per peso infrastrutturale, dimensione della base praticanti e palmarès sportivo. Per ogni paese sono riportati: data atto costitutivo, anno di affiliazione FIP, classe, dati partecipazione e performance ranking.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step__n">03</div>
+      <div>
+        <h4>Elaborazione OE — Risultati dell'analisi</h4>
+        <p>Le stime sul valore di mercato della filiera (equipment, impiantistica, turismo, servizi) sono elaborazioni di OpenEconomics sulla base di letteratura specializzata, dati di mercato pubblici e estrapolazioni dai volumi infrastrutturali FIP. Le proiezioni sui moltiplicatori sono ottenute con metodologia analoga a quelle delle analisi di impatto OE per i settori sport, turismo e cultura.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step__n">04</div>
+      <div>
+        <h4>Limiti e aggiornamenti</h4>
+        <p>I dati per paese si riferiscono a snapshot temporali diversi a seconda della disponibilità federale (giugno 2024 → ottobre 2025). Le voci segnalate come "—" o "stima OE" indicano dati non disponibili nel report di origine, sostituiti con stime conservative. L'aggiornamento del documento è coerente con la pubblicazione FIP di novembre 2025.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step__n">05</div>
+      <div>
+        <h4>Approccio OpenEconomics</h4>
+        <p>L'analisi segue lo schema interpretativo OE per i settori a forte crescita: identificazione del perimetro, scomposizione dei driver di valore, mappatura geografica del fenomeno, stima dei moltiplicatori di filiera. Il livello tecnico è coerente con gli studi di impatto economico ordinariamente redatti per committenti pubblici e privati.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CTA BAND ═════════ -->
+<div class="cta-band">
+  <div class="cta-band__text">
+    <h2>Vuoi una valutazione di impatto del padel sul tuo <em>territorio o sulla tua filiera?</em></h2>
+    <p>OpenEconomics realizza analisi di impatto economico, studi settoriali e valutazioni di policy per federazioni sportive, imprese dell'industria sportiva e pubblica amministrazione.</p>
+  </div>
+  <div class="cta-band__actions">
+    <a href="https://www.openeconomics.eu" target="_blank" rel="noopener" class="btn-lime">
+      <i data-lucide="arrow-right"></i>
+      Contattaci
+    </a>
+    <a href="https://www.openeconomics.eu" target="_blank" rel="noopener" class="btn-outline">
+      <i data-lucide="external-link"></i>
+      Scopri i nostri servizi
+    </a>
+  </div>
+</div>
+
+<!-- ═════════ FOOTER ═════════ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div>
+      <div class="footer__logo-name">Open<em>Economics</em></div>
+      <p class="footer__tagline">Soluzioni integrate per l'analisi d'impatto socioeconomico e la gestione di finanziamenti pubblici, sostenendo imprese e PA nella mitigazione dei rischi finanziari, sociali e climatici.</p>
+    </div>
+    <div>
+      <div class="footer__condizioni-label">Condizioni d'uso</div>
+      <p class="footer__condizioni-text">Il presente documento e tutte le informazioni in esso contenute possono essere divulgati, a condizione che la distribuzione avvenga citando OpenEconomics come fonte. Le informazioni sono fornite a scopo puramente informativo e non implicano alcuna garanzia o impegno da parte di OpenEconomics. Le analisi economiche contenute nel documento sono state elaborate sulla base di fonti pubbliche autorevoli e fornitori di dati specialistici, con l'obiettivo di offrire una valutazione professionale, oggettiva e prudenziale in linea con le prassi metodologiche di comparto. Al documento e ai suoi contenuti si applicano il copyright e le norme in materia di protezione dei dati personali. Fonte primaria dei dati di base: FIP World Padel Report 2025, International Padel Federation.</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <a href="https://www.openeconomics.eu" target="_blank" rel="noopener" class="footer__bottom-left">www.openeconomics.eu</a>
+    <div class="footer__bottom-right">Copyright &copy; OpenEconomics SRL 2026</div>
+  </div>
+</footer>
+
+<!-- ═════════ JAVASCRIPT ═════════ -->
+<script>
+// --- NAVIGAZIONE ---
+function navTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function setActiveDot(id) {
+  document.querySelectorAll('.toc__dot').forEach(x => x.classList.remove('active'));
+  const d = document.querySelector(`.toc__dot[data-s="${id}"]`);
+  if (d) d.classList.add('active');
+}
+
+// --- SECTIONS ARRAY ---
+const SECTIONS = [
+  { id: 'numeri',      tag: 'Numeri chiave globali',                 title: "L'industria del padel in nove cifre",                              num: '1 / 5' },
+  { id: 'crescita',    tag: 'Distribuzione geografica',              title: 'Dove si gioca il padel nel mondo: il quadro per continente',       num: '2 / 5' },
+  { id: 'paesi',       tag: 'Federazioni nazionali',                 title: 'Le schede paese: partecipazione, infrastruttura, performance',     num: '3 / 5' },
+  { id: 'impatti',     tag: "Risultati dell'analisi",                title: 'Perché il padel è oggi un asset economico',                        num: '4 / 5' },
+  { id: 'metodologia', tag: 'Nota metodologica',                     title: 'Fonti, perimetro e approccio analitico',                            num: '5 / 5' },
+];
+
+// --- BREADCRUMB + TOC SYNC ---
+const crumb      = document.getElementById('secCrumb');
+const crumbTag   = document.getElementById('crumbTag');
+const crumbTitle = document.getElementById('crumbTitle');
+const crumbNum   = document.getElementById('crumbNum');
+const crumbFill  = document.getElementById('crumbFill');
+let currentId = null, titleAnim = null;
+const NAV_H = 56, CRUMB_H = 36;
+
+function showCrumb(show) { crumb.classList.toggle('visible', show); }
+function setCrumbContent(section) {
+  if (section.id === currentId) return;
+  currentId = section.id;
+  crumbTitle.classList.add('exiting');
+  clearTimeout(titleAnim);
+  titleAnim = setTimeout(() => {
+    crumbTag.textContent = section.tag;
+    crumbTitle.textContent = section.title;
+    crumbNum.textContent = section.num;
+    crumbTitle.classList.remove('exiting');
+    crumbTitle.classList.add('entering');
+    void crumbTitle.offsetWidth;
+    crumbTitle.classList.remove('entering');
+  }, 120);
+}
+function updateProgress() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = scrollable > 0 ? Math.max(0, Math.min(100, (window.scrollY / scrollable) * 100)) : 0;
+  crumbFill.style.width = pct + '%';
+}
+
+const sectionEls = SECTIONS.map(s => document.getElementById(s.id)).filter(Boolean);
+const obsOpts = { threshold: 0, rootMargin: `-${NAV_H + CRUMB_H}px 0px -60% 0px` };
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const sec = SECTIONS.find(s => s.id === entry.target.id);
+      if (sec) { setCrumbContent(sec); setActiveDot(sec.id); }
+    }
+  });
+}, obsOpts);
+sectionEls.forEach(el => obs.observe(el));
+
+// Sync TOC per hero (non in SECTIONS)
+const heroEl = document.getElementById('hero');
+if (heroEl) {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) setActiveDot('hero'); });
+  }, { threshold: 0.25 }).observe(heroEl);
+}
+
+let rafId = null;
+window.addEventListener('scroll', () => {
+  if (rafId) return;
+  rafId = requestAnimationFrame(() => {
+    rafId = null;
+    const firstSection = sectionEls[0];
+    const threshold = firstSection ? firstSection.offsetTop + 80 : 200;
+    showCrumb(window.scrollY > threshold);
+    updateProgress();
+  });
+}, { passive: true });
+
+// --- COUNTRY CARDS FILTER ---
+document.querySelectorAll('.country-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.getAttribute('data-filter');
+    document.querySelectorAll('.country-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.ccard').forEach(card => {
+      if (filter === 'all') {
+        card.style.display = '';
+      } else {
+        card.style.display = card.getAttribute('data-status') === filter ? '' : 'none';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
