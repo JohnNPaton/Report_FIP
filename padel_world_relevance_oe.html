@@ -437,6 +437,26 @@ section { scroll-margin-top: calc(56px + 36px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ─── CCARD TABS (spesa diretta vs indiretto) ─────── */
+.ccard__intro {
+  font-size: 13px; color: var(--grey-text); line-height: 1.6;
+  background: var(--grey-light); padding: 12px 16px;
+  border-left: 3px solid var(--blu-500); margin-bottom: 2px;
+}
+.ccard__intro strong { color: var(--blu-700); font-weight: 600; }
+.ccard__tabs {
+  display: flex; gap: 2px; margin-bottom: 2px;
+}
+.ccard__tab {
+  flex: 1; padding: 10px 12px;
+  font-family: var(--fm); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; border: none;
+  background: var(--grey-light); color: var(--grey-text);
+  cursor: pointer; font-weight: 700; transition: background .2s, color .2s;
+}
+.ccard__tab:hover { background: var(--grey-mid); }
+.ccard__tab.active { background: var(--blu-700); color: var(--white); }
+
 /* ─── KEY TAKEAWAYS / INFO CARDS ──────────────────────── */
 .ic {
   background: var(--blu-800); padding: 28px 22px;
@@ -1639,23 +1659,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1674,23 +1715,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1709,23 +1771,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1744,23 +1827,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1779,23 +1883,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1814,23 +1939,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1849,23 +1995,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1884,23 +2051,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1919,23 +2107,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1954,23 +2163,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -1989,23 +2219,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -2024,23 +2275,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -2059,23 +2331,44 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
@@ -2100,28 +2393,79 @@ section { scroll-margin-top: calc(56px + 36px); }
           <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
         </div>
       </div>
-      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__intro">I risultati derivano da due componenti: la <strong>spesa diretta del paese</strong> (attività padelistiche nazionali) e l'<strong>indiretto/indotto da altri paesi</strong> (turismo sportivo internazionale, circuiti Premier Padel, export equipment, diritti media). Seleziona la componente da esplorare.</div>
+      <div class="ccard__tabs">
+        <button class="ccard__tab active" data-panel="diretto">Spesa diretta</button>
+        <button class="ccard__tab" data-panel="estero">Indiretto · altri paesi</button>
       </div>
-      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
-      <div class="ccard__stats">
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
-        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      <div class="ccard__panel" data-panel="diretto">
+        <div class="ccard__block-label">Output da spesa domestica · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output diretto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto dir. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione dir. (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Filiera e investimenti · spesa domestica</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. impianti (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Retail &amp; servizi loc. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
       </div>
-      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__panel" data-panel="estero" style="display:none">
+        <div class="ccard__block-label">Output da flussi internazionali · OE [da compilare]</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Output da export/tornei (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">VA da turismo sport. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Occupaz. da flussi esteri (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+        <div class="ccard__block-label">Circuiti internazionali e indotto</div>
+        <div class="ccard__stats">
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Premier Padel &amp; FIP (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Turismo sportivo int. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+          <div class="ccard__stat"><div class="ccard__stat-lbl">Diritti media/sponsor. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        </div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori totali · OE [da compilare]</div>
       <div class="ccard__pillrow">
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
-        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL tot.</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz. tot.</span><span class="ccard__pill-val">—</span></div>
       </div>
       <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
     </article>
 
   </div>
+
+  <div class="stitle">Distribuzione dell'impatto per settore e per area geografica</div>
+
+  <div class="c2">
+    <div>
+      <div class="cb">
+        <div class="cb__num">Grafico 05</div>
+        <div class="cb__title">Output economico del padel per settore · 14 paesi OE 2025</div>
+        <div class="cb__desc">Distribuzione dell'output economico generato dal padel nei principali settori della filiera: impiantistica, retail, servizi e didattica, eventi e media, turismo sportivo. Elaborazione OE su analisi di impatto input-output.</div>
+        <div class="fl">
+          <i data-lucide="bar-chart" class="fl-icon"></i>
+          <div class="fl__tag">Flourish embed</div>
+          <div class="fl__title">Grafico a barre impilate — Output per settore · 14 paesi</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="cb">
+        <div class="cb__num">Grafico 06</div>
+        <div class="cb__title">Impatti economici del padel per area geografica · OE 2025</div>
+        <div class="cb__desc">Aggregazione degli impatti economici nei 14 paesi analizzati per macro-area: Europa, Americhe, Asia/Golfo, Africa. Stima OE su base FIP e analisi di impatto input-output 2025.</div>
+        <div class="fl">
+          <i data-lucide="pie-chart" class="fl-icon"></i>
+          <div class="fl__tag">Flourish embed</div>
+          <div class="fl__title">Grafico a torta — Impatti per continente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 
@@ -2318,6 +2662,20 @@ window.addEventListener('scroll', () => {
     });
   });
 })();
+
+// --- CCARD TABS ---
+document.querySelectorAll('.ccard__tab').forEach(function(tab) {
+  tab.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var card = tab.closest('.ccard');
+    var panel = tab.getAttribute('data-panel');
+    card.querySelectorAll('.ccard__tab').forEach(function(t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+    card.querySelectorAll('.ccard__panel').forEach(function(p) {
+      p.style.display = p.getAttribute('data-panel') === panel ? '' : 'none';
+    });
+  });
+});
 
 // --- COUNTRY CARDS FILTER ---
 document.querySelectorAll('.country-filter').forEach(btn => {
