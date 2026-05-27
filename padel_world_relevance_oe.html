@@ -410,9 +410,32 @@ section { scroll-margin-top: calc(56px + 36px); }
   background: var(--lime); color: var(--blu-900);
   width: fit-content; font-weight: 700;
 }
-.ccard__tag--emerg { background: var(--blu-400); color: var(--blu-900); }
-.ccard__tag--cons  { background: var(--lime); color: var(--blu-900); }
-.ccard__tag--matur { background: var(--blu-700); color: var(--white); }
+.ccard__tag--emerg   { background: var(--blu-400); color: var(--blu-900); }
+.ccard__tag--cons    { background: var(--lime); color: var(--blu-900); }
+.ccard__tag--matur   { background: var(--blu-700); color: var(--white); }
+.ccard__tag--pending { background: var(--grey-mid); color: var(--grey-text); }
+
+/* ─── CCARD ACCORDION ────────────────────────────────── */
+.ccard__head     { cursor: pointer; user-select: none; }
+.ccard__toggle   {
+  width: 28px; height: 28px; border: 1.5px solid var(--grey-mid);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-left: 8px; transition: border-color .2s;
+  color: var(--grey-text);
+}
+.ccard:hover .ccard__toggle { border-color: var(--blu-700); }
+.ccard.open .ccard__toggle  { border-color: var(--blu-700); color: var(--blu-700); }
+.ccard__toggle svg { transition: transform .25s ease; }
+.ccard.open .ccard__toggle svg { transform: rotate(180deg); }
+.ccard__body { display: none; }
+.ccard.open .ccard__body {
+  display: block;
+  animation: ccardSlide .2s ease;
+}
+@keyframes ccardSlide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 /* ─── KEY TAKEAWAYS / INFO CARDS ──────────────────────── */
 .ic {
@@ -542,7 +565,8 @@ section { scroll-margin-top: calc(56px + 36px); }
     <li><a href="#numeri">Numeri</a></li>
     <li><a href="#crescita">Crescita</a></li>
     <li><a href="#paesi">Schede paese</a></li>
-    <li><a href="#impatti">Impatti</a></li>
+    <li><a href="#impatti">Impatti globali</a></li>
+    <li><a href="#impatti-paese">Imp. per paese</a></li>
     <li><a href="#metodologia">Metodologia</a></li>
   </ul>
 </nav>
@@ -553,8 +577,9 @@ section { scroll-margin-top: calc(56px + 36px); }
   <div class="toc__dot"        data-label="Numeri"      data-s="numeri"      onclick="navTo('numeri')"></div>
   <div class="toc__dot"        data-label="Crescita"    data-s="crescita"    onclick="navTo('crescita')"></div>
   <div class="toc__dot"        data-label="Paesi"       data-s="paesi"       onclick="navTo('paesi')"></div>
-  <div class="toc__dot"        data-label="Impatti"     data-s="impatti"     onclick="navTo('impatti')"></div>
-  <div class="toc__dot"        data-label="Metodologia" data-s="metodologia" onclick="navTo('metodologia')"></div>
+  <div class="toc__dot"        data-label="Impatti glob." data-s="impatti"       onclick="navTo('impatti')"></div>
+  <div class="toc__dot"        data-label="Imp. paese"  data-s="impatti-paese" onclick="navTo('impatti-paese')"></div>
+  <div class="toc__dot"        data-label="Metodologia" data-s="metodologia"   onclick="navTo('metodologia')"></div>
 </nav>
 
 <!-- ═════════ SECTION BREADCRUMB ═════════ -->
@@ -1461,12 +1486,12 @@ section { scroll-margin-top: calc(56px + 36px); }
   </div>
 </div>
 
-<!-- ═════════ SECTION 4 — RISULTATI DELL'ANALISI / IMPATTI ═════════ -->
+<!-- ═════════ SECTION 4 — IMPATTI GLOBALI ═════════ -->
 <section class="s-light" id="impatti">
   <div class="sh">
     <div class="sh__bar"></div>
     <div>
-      <div class="sh__tag">Risultati dell'analisi</div>
+      <div class="sh__tag">Impatti globali</div>
       <div class="sh__title">Perché il padel è oggi un asset economico</div>
     </div>
   </div>
@@ -1575,7 +1600,532 @@ section { scroll-margin-top: calc(56px + 36px); }
   </div>
 </div>
 
-<!-- ═════════ SECTION 5 — METODOLOGIA ═════════ -->
+<!-- ═════════ SECTION 5 — IMPATTI PER PAESE ═════════ -->
+<section class="s-grey" id="impatti-paese">
+  <div class="sh">
+    <div class="sh__bar"></div>
+    <div>
+      <div class="sh__tag">Impatti per paese</div>
+      <div class="sh__title">I numeri dell'analisi di impatto OE · per federazione</div>
+    </div>
+  </div>
+
+  <div class="tx" style="max-width:920px; margin-bottom:48px;">
+    <p>Le schede seguono la medesima selezione dei 14 paesi analizzati nelle schede di partecipazione. Per ciascuna federazione verranno riportati i risultati dell'analisi di impatto economico OE: output totale, valore aggiunto, occupazione (FTE diretti e indiretti), investimenti infrastrutturali, indotto turistico e moltiplicatori di filiera.</p>
+    <p>I valori contrassegnati con "—" sono <strong>da compilare con i risultati dell'analisi OE 2025</strong>. La metodologia di stima è illustrata nella sezione Metodologia.</p>
+  </div>
+
+  <div class="country-controls">
+    <span class="country-controls__lbl">Filtra per fase di sviluppo:</span>
+    <button class="country-filter active" data-filter="all">Tutti</button>
+    <button class="country-filter" data-filter="matur">Maturi</button>
+    <button class="country-filter" data-filter="cons">Consolidamento</button>
+    <button class="country-filter" data-filter="emerg">Emergenti</button>
+  </div>
+
+  <div class="country-grid">
+
+    <!-- ─── SPAGNA ─── -->
+    <article class="ccard" data-status="matur">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#AA151B"/><rect width="3" height="1" y="0.5" fill="#F1BF00"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Spagna</h3>
+          <div class="ccard__fed">Federación Española de Pádel</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── ITALIA ─── -->
+    <article class="ccard" data-status="matur">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#CE2B37"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Italia</h3>
+          <div class="ccard__fed">Federazione Italiana Tennis e Padel</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── FRANCIA ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#002395"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Francia</h3>
+          <div class="ccard__fed">Fédération Française de Tennis</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── SVEZIA ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"/><rect x="5" width="2" height="10" fill="#FECC00"/><rect y="4" width="16" height="2" fill="#FECC00"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Svezia</h3>
+          <div class="ccard__fed">Svenska Padelförbundet</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── PAESI BASSI ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="0.667" fill="#AE1C28"/><rect width="3" height="0.667" y="0.667" fill="#FFFFFF"/><rect width="3" height="0.667" y="1.333" fill="#21468B"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Paesi Bassi</h3>
+          <div class="ccard__fed">Koninklijke Nederlandse Lawn Tennis Bond</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── BELGIO ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#000000"/><rect width="1" height="2" x="1" fill="#FAE042"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Belgio</h3>
+          <div class="ccard__fed">Padel Belgium</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── PORTOGALLO ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1.2" height="2" fill="#006600"/><rect width="1.8" height="2" x="1.2" fill="#FF0000"/><circle cx="1.2" cy="1" r="0.32" fill="#FFCC00" stroke="#000" stroke-width="0.02"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Portogallo</h3>
+          <div class="ccard__fed">Federação Portuguesa de Pádel</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── EMIRATI ARABI UNITI ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 12 6" preserveAspectRatio="none"><rect width="3" height="6" fill="#FF0000"/><rect width="9" height="2" x="3" fill="#00732F"/><rect width="9" height="2" x="3" y="2" fill="#FFFFFF"/><rect width="9" height="2" x="3" y="4" fill="#000000"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Emirati Arabi Uniti</h3>
+          <div class="ccard__fed">United Arab Emirates Padel Association</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── ARABIA SAUDITA ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#006C35"/><rect width="2.4" height="0.08" x="0.3" y="0.7" fill="#FFFFFF"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Arabia Saudita</h3>
+          <div class="ccard__fed">Saudi Padel Federation</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── STATI UNITI ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 19 10" preserveAspectRatio="none"><rect width="19" height="10" fill="#FFFFFF"/><rect width="19" height="0.77" y="0" fill="#B22234"/><rect width="19" height="0.77" y="1.54" fill="#B22234"/><rect width="19" height="0.77" y="3.08" fill="#B22234"/><rect width="19" height="0.77" y="4.62" fill="#B22234"/><rect width="19" height="0.77" y="6.15" fill="#B22234"/><rect width="19" height="0.77" y="7.69" fill="#B22234"/><rect width="19" height="0.77" y="9.23" fill="#B22234"/><rect width="7.6" height="5.39" fill="#3C3B6E"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Stati Uniti</h3>
+          <div class="ccard__fed">United States Padel Association</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── MESSICO ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#006847"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#CE1126"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Messico</h3>
+          <div class="ccard__fed">Federación Mexicana de Pádel</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── ARGENTINA ─── -->
+    <article class="ccard" data-status="cons">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="0.667" fill="#74ACDF"/><rect width="3" height="0.667" y="0.667" fill="#FFFFFF"/><rect width="3" height="0.667" y="1.333" fill="#74ACDF"/><circle cx="1.5" cy="1" r="0.16" fill="#F6B40E"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Argentina</h3>
+          <div class="ccard__fed">Asociación Padel Argentino</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── EGITTO ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="0.667" fill="#CE1126"/><rect width="3" height="0.667" y="0.667" fill="#FFFFFF"/><rect width="3" height="0.667" y="1.333" fill="#000000"/></svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Egitto</h3>
+          <div class="ccard__fed">Egyptian Padel Federation</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+    <!-- ─── SUD AFRICA ─── -->
+    <article class="ccard" data-status="emerg">
+      <div class="ccard__head">
+        <div class="ccard__flag">
+          <svg viewBox="0 0 3 2" preserveAspectRatio="none">
+            <rect width="3" height="2" fill="#007749"/>
+            <polygon points="0,0 1.2,1 0,2" fill="#000000"/>
+            <polygon points="0,0.3 0.9,1 0,1.7" fill="#FFB612"/>
+            <rect width="3" height="0.4" y="0" fill="#DE3831"/>
+            <rect width="3" height="0.4" y="1.6" fill="#001489"/>
+          </svg>
+        </div>
+        <div class="ccard__title">
+          <h3 class="ccard__name">Sud Africa</h3>
+          <div class="ccard__fed">South African Padel Federation</div>
+        </div>
+        <div class="ccard__meta">
+          <span class="ccard__tag ccard__tag--pending">Output da compilare</span>
+        </div>
+      </div>
+      <div class="ccard__block-label">Output economico · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Output totale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Valore aggiunto (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Occupazione (FTE)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Investimenti e indotto · Analisi OE [da compilare]</div>
+      <div class="ccard__stats">
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Invest. infrastrut. (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Indotto turistico (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+        <div class="ccard__stat"><div class="ccard__stat-lbl">Gettito fiscale (€M)</div><div class="ccard__stat-val">—</div><div class="ccard__stat-sub">da analisi OE</div></div>
+      </div>
+      <div class="ccard__block-label">Moltiplicatori · Analisi OE [da compilare]</div>
+      <div class="ccard__pillrow">
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. output</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. PIL</span><span class="ccard__pill-val">—</span></div>
+        <div class="ccard__pill"><span class="ccard__pill-lbl">Molt. occupaz.</span><span class="ccard__pill-val">—</span></div>
+      </div>
+      <div class="ccard__note"><em>Valori da compilare con i risultati dell'analisi di impatto OE 2025.</em></div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ═════════ SECTION 6 — METODOLOGIA ═════════ -->
 <section class="s-dark" id="metodologia">
   <div class="sh">
     <div class="sh__bar"></div>
@@ -1675,11 +2225,12 @@ function setActiveDot(id) {
 
 // --- SECTIONS ARRAY ---
 const SECTIONS = [
-  { id: 'numeri',      tag: 'Numeri chiave globali',                 title: "L'industria del padel in nove cifre",                              num: '1 / 5' },
-  { id: 'crescita',    tag: 'Distribuzione geografica',              title: 'Dove si gioca il padel nel mondo: il quadro per continente',       num: '2 / 5' },
-  { id: 'paesi',       tag: 'Federazioni nazionali',                 title: 'Le schede paese: partecipazione, infrastruttura, performance',     num: '3 / 5' },
-  { id: 'impatti',     tag: "Risultati dell'analisi",                title: 'Perché il padel è oggi un asset economico',                        num: '4 / 5' },
-  { id: 'metodologia', tag: 'Nota metodologica',                     title: 'Fonti, perimetro e approccio analitico',                            num: '5 / 5' },
+  { id: 'numeri',        tag: 'Numeri chiave globali',    title: "L'industria del padel in nove cifre",                            num: '1 / 6' },
+  { id: 'crescita',      tag: 'Distribuzione geografica', title: 'Dove si gioca il padel nel mondo: il quadro per continente',     num: '2 / 6' },
+  { id: 'paesi',         tag: 'Federazioni nazionali',    title: 'Le schede paese: partecipazione, infrastruttura, performance',   num: '3 / 6' },
+  { id: 'impatti',       tag: 'Impatti globali',          title: 'Perché il padel è oggi un asset economico',                      num: '4 / 6' },
+  { id: 'impatti-paese', tag: 'Impatti per paese',        title: "I numeri dell'analisi di impatto OE · per federazione",         num: '5 / 6' },
+  { id: 'metodologia',   tag: 'Nota metodologica',        title: 'Fonti, perimetro e approccio analitico',                         num: '6 / 6' },
 ];
 
 // --- BREADCRUMB + TOC SYNC ---
@@ -1744,6 +2295,29 @@ window.addEventListener('scroll', () => {
     updateProgress();
   });
 }, { passive: true });
+
+// --- CCARD ACCORDION ---
+(function() {
+  var chevron = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+  document.querySelectorAll('.ccard').forEach(function(card) {
+    var head = card.querySelector('.ccard__head');
+    if (!head) return;
+    var children = Array.from(card.children).filter(function(el) { return el !== head; });
+    var body = document.createElement('div');
+    body.className = 'ccard__body';
+    card.appendChild(body);
+    children.forEach(function(child) { body.appendChild(child); });
+    var toggle = document.createElement('div');
+    toggle.className = 'ccard__toggle';
+    toggle.setAttribute('aria-label', 'Espandi scheda');
+    toggle.innerHTML = chevron;
+    head.appendChild(toggle);
+    head.addEventListener('click', function() {
+      card.classList.toggle('open');
+      toggle.setAttribute('aria-label', card.classList.contains('open') ? 'Comprimi scheda' : 'Espandi scheda');
+    });
+  });
+})();
 
 // --- COUNTRY CARDS FILTER ---
 document.querySelectorAll('.country-filter').forEach(btn => {
